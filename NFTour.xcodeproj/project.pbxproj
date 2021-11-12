@@ -14,6 +14,7 @@
 		548D1C24273BEA2E00E0E4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C22273BEA2E00E0E4D2 /* LaunchScreen.storyboard */; };
 		7A068450273D5C250074133C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06844F273D5C250074133C /* ButtonView.swift */; };
 		7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068452273E96DC0074133C /* AddressWalletViewController.swift */; };
+		7A068455273EB1B80074133C /* InsertAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068454273EB1B80074133C /* InsertAddressView.swift */; };
 		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		548D1C25273BEA2E00E0E4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A06844F273D5C250074133C /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		7A068452273E96DC0074133C /* AddressWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWalletViewController.swift; sourceTree = "<group>"; };
+		7A068454273EB1B80074133C /* InsertAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAddressView.swift; sourceTree = "<group>"; };
 		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
 		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				7A06844F273D5C250074133C /* ButtonView.swift */,
+				7A068454273EB1B80074133C /* InsertAddressView.swift */,
 				7A06844C273C0D6C0074133C /* Controller */,
 			);
 			path = Views;
@@ -236,6 +239,7 @@
 				7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */,
 				7A068450273D5C250074133C /* ButtonView.swift in Sources */,
 				548D1C18273BEA2B00E0E4D2 /* AppDelegate.swift in Sources */,
+				7A068455273EB1B80074133C /* InsertAddressView.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

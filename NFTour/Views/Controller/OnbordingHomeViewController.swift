@@ -10,9 +10,9 @@ import SnapKit
 
 class OnbordingHomeViewController: UIViewController {
     
-    private lazy var background: UIImageView = {
+    private lazy var backgroundImage: UIImageView = {
         let backgroundImage = UIImageView()
-        backgroundImage.image = UIImage(named: "backgroundHome")
+        backgroundImage.image = UIImage(named: "backgroundImage")
         
         return backgroundImage
     }()
@@ -76,6 +76,7 @@ class OnbordingHomeViewController: UIViewController {
         // Adiciona botões como subview
         //addSubview(background)
         view.addSubview(logo)
+        view.addSubview(backgroundImage)
         view.addSubview(titleHome)
         view.addSubview(subtitle)
         view.addSubview(buttonStart)
@@ -91,13 +92,21 @@ class OnbordingHomeViewController: UIViewController {
         logo.snp.makeConstraints { make in
             make.height.equalTo(146)
             make.width.equalTo(28)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(242)
+            make.top.equalToSuperview().offset(60)
             make.leading.equalTo(114)
             make.trailing.equalTo(-114)
         }
         
+        backgroundImage.snp.makeConstraints { make in
+            make.height.equalTo(233)
+            make.width.equalTo(286)
+            make.top.equalTo(logo.snp.bottom).offset(60)
+            make.leading.equalTo(47)
+            make.trailing.equalTo(-42)
+        }
+        
         titleHome.snp.makeConstraints { make in
-            make.top.equalTo(logo.snp.bottom).offset(100)
+            make.top.equalTo(backgroundImage.snp.bottom).offset(61)
             make.leading.equalToSuperview().offset(68)
             make.trailing.equalToSuperview().offset(-68)
         }
