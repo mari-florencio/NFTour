@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		548D1C18273BEA2B00E0E4D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C17273BEA2B00E0E4D2 /* AppDelegate.swift */; };
 		548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C19273BEA2B00E0E4D2 /* SceneDelegate.swift */; };
-		548D1C1C273BEA2B00E0E4D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C1B273BEA2B00E0E4D2 /* ViewController.swift */; };
-		548D1C1F273BEA2B00E0E4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C1D273BEA2B00E0E4D2 /* Main.storyboard */; };
+		548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C1B273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift */; };
 		548D1C21273BEA2E00E0E4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */; };
 		548D1C24273BEA2E00E0E4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C22273BEA2E00E0E4D2 /* LaunchScreen.storyboard */; };
+		7A068450273D5C250074133C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06844F273D5C250074133C /* ButtonView.swift */; };
+		7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068452273E96DC0074133C /* AddressWalletViewController.swift */; };
+		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		548D1C14273BEA2B00E0E4D2 /* NFTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		548D1C17273BEA2B00E0E4D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		548D1C19273BEA2B00E0E4D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		548D1C1B273BEA2B00E0E4D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		548D1C1E273BEA2B00E0E4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		548D1C1B273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingHomeViewController.swift; sourceTree = "<group>"; };
 		548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		548D1C23273BEA2E00E0E4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		548D1C25273BEA2E00E0E4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A06844F273D5C250074133C /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		7A068452273E96DC0074133C /* AddressWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWalletViewController.swift; sourceTree = "<group>"; };
+		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
+		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22042EED757135CDE0EE0383 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CFD7BBD1B2D621B119FCC72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */,
+				9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		548D1C0B273BEA2B00E0E4D2 = {
 			isa = PBXGroup;
 			children = (
 				548D1C16273BEA2B00E0E4D2 /* NFTour */,
 				548D1C15273BEA2B00E0E4D2 /* Products */,
+				4CFD7BBD1B2D621B119FCC72 /* Pods */,
+				22042EED757135CDE0EE0383 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +84,38 @@
 			children = (
 				548D1C17273BEA2B00E0E4D2 /* AppDelegate.swift */,
 				548D1C19273BEA2B00E0E4D2 /* SceneDelegate.swift */,
-				548D1C1B273BEA2B00E0E4D2 /* ViewController.swift */,
-				548D1C1D273BEA2B00E0E4D2 /* Main.storyboard */,
+				7A068451273E19A90074133C /* Coordinator */,
+				7A06844B273C0D550074133C /* Views */,
 				548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */,
 				548D1C22273BEA2E00E0E4D2 /* LaunchScreen.storyboard */,
 				548D1C25273BEA2E00E0E4D2 /* Info.plist */,
 			);
 			path = NFTour;
+			sourceTree = "<group>";
+		};
+		7A06844B273C0D550074133C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A06844F273D5C250074133C /* ButtonView.swift */,
+				7A06844C273C0D6C0074133C /* Controller */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A06844C273C0D6C0074133C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				548D1C1B273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift */,
+				7A068452273E96DC0074133C /* AddressWalletViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7A068451273E19A90074133C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 548D1C28273BEA2E00E0E4D2 /* Build configuration list for PBXNativeTarget "NFTour" */;
 			buildPhases = (
+				126E885F6472A4FB8F501071 /* [CP] Check Pods Manifest.lock */,
 				548D1C10273BEA2B00E0E4D2 /* Sources */,
 				548D1C11273BEA2B00E0E4D2 /* Frameworks */,
 				548D1C12273BEA2B00E0E4D2 /* Resources */,
+				CDFABC7A0DFFC246F0573703 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,18 +180,61 @@
 			files = (
 				548D1C24273BEA2E00E0E4D2 /* LaunchScreen.storyboard in Resources */,
 				548D1C21273BEA2E00E0E4D2 /* Assets.xcassets in Resources */,
-				548D1C1F273BEA2B00E0E4D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		126E885F6472A4FB8F501071 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NFTour-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDFABC7A0DFFC246F0573703 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NFTour/Pods-NFTour-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NFTour/Pods-NFTour-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NFTour/Pods-NFTour-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		548D1C10273BEA2B00E0E4D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				548D1C1C273BEA2B00E0E4D2 /* ViewController.swift in Sources */,
+				548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */,
+				7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */,
+				7A068450273D5C250074133C /* ButtonView.swift in Sources */,
 				548D1C18273BEA2B00E0E4D2 /* AppDelegate.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +243,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		548D1C1D273BEA2B00E0E4D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				548D1C1E273BEA2B00E0E4D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		548D1C22273BEA2E00E0E4D2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,17 +372,17 @@
 		};
 		548D1C29273BEA2E00E0E4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SKRWT528DU;
+				DEVELOPMENT_TEAM = 6JQBX9UWVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,17 +400,17 @@
 		};
 		548D1C2A273BEA2E00E0E4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SKRWT528DU;
+				DEVELOPMENT_TEAM = 6JQBX9UWVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
