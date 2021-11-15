@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddressWalletViewController: UIViewController {
+class AddressWalletViewController: UIViewController{
 
     private lazy var descriptionLabel: UILabel = {
         let description = UILabel()
@@ -19,6 +19,12 @@ class AddressWalletViewController: UIViewController {
         
         return description
     }()
+    
+    private lazy var insertWalletTextField: AddressTextFieldView = {
+        .init(placeholder: "Endereço")
+    }()
+    
+    private lazy var buttonConnect: ButtonView = ButtonView.createButton(placeholder: "Conectar")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,20 +41,44 @@ class AddressWalletViewController: UIViewController {
     
     private func setupView(){
         view.backgroundColor = UIColor(named: "backgroundColor")
+        
+        buttonConnect.addTarget(self, action: #selector(tryConnect(_sender:)), for: .touchUpInside)
+    }
+    
+    @objc func tryConnect (_sender: UIButton!) {
+        let newViewController = AlertWalletViewController(wallet: .connected)
+        let navigationController = UINavigationController(rootViewController: newViewController)
+        navigationController.modalPresentationStyle = .custom
+        present(navigationController, animated: true, completion: nil)
     }
     
     private func setupHierarchy() {
         // Adiciona botões como subview
         //addSubview(background)
         view.addSubview(descriptionLabel)
+        view.addSubview(insertWalletTextField)
+        view.addSubview(buttonConnect)
     }
     
     private func setupConstraints() {
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(399)
-            make.leading.equalTo(25)
+            make.top.equalToSuperview().offset(21)
+            make.leading.equalTo(21)
             make.trailing.equalTo(-84)
         }
         
+        insertWalletTextField.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(24)
+            make.leading.equalTo(15)
+            make.trailing.equalTo(-15)
+        }
+        
+        buttonConnect.snp.makeConstraints { make in
+            make.top.equalTo(insertWalletTextField.snp.bottom).offset(16)
+            make.leading.equalTo(15)
+            make.trailing.equalTo(-15)
+        }
+        
     }
+    
 }

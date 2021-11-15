@@ -20,19 +20,23 @@ class ButtonView: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(placeholder: String){
-        super.init(frame: .zero)
-        self.setTitle(placeholder, for: .normal)
-        self.setTitleColor(UIColor(named: "textColorButton"), for: .normal)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        self.backgroundColor = UIColor(named: "backgroundButton")
-        self.layer.cornerRadius = 13
-        self.clipsToBounds = true
-       
-        self.snp.makeConstraints { make in
+    static func createButton(placeholder: String) -> ButtonView {
+        let button = ButtonView()
+
+        button.setTitle(placeholder, for: .normal)
+        button.setTitleColor(UIColor(named: "textColorButton"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        button.backgroundColor = UIColor(named: "backgroundButton")
+        button.layer.cornerRadius = 13
+        button.clipsToBounds = true
+
+        
+        button.snp.makeConstraints { make in
             make.height.equalTo(60)
             make.width.equalTo(351)
             
         }
+        
+        return button
     }
 }

@@ -1,0 +1,39 @@
+//
+//  CloseButton.swift
+//  NFTour
+//
+//  Created by Maria Luiza Amaral on 14/11/21.
+//
+
+import UIKit
+
+class CloseButton: UIButton {
+
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        
+    }
+
+    // Compilador briga com a gente se não implementarmos isso
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    static func createButtonX() -> CloseButton {
+        let button = CloseButton()
+        let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20, weight: .medium))
+        
+        button.setImage(UIImage(systemName: "xmark", withConfiguration: configuration), for: .normal)
+        button.tintColor = UIColor(named: "textColorButton")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+
+        button.snp.makeConstraints { make in
+            make.height.equalTo(18)
+            make.width.equalTo(32)
+            
+        }
+        
+        return button
+    }
+
+}

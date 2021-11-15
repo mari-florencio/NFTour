@@ -47,7 +47,7 @@ class OnbordingHomeViewController: UIViewController {
         return subtitle
     }()
     
-    private lazy var buttonStart: ButtonView = .init(placeholder: "Começar")
+    private lazy var buttonStart: ButtonView = ButtonView.createButton(placeholder: "Começar")
 
     @objc func pressed(_sender: UIButton!) {
         let newViewController = AddressWalletViewController()
