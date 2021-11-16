@@ -46,7 +46,7 @@ class AddressWalletViewController: UIViewController{
     }
     
     @objc func tryConnect (_sender: UIButton!) {
-        let newViewController = AlertWalletViewController(wallet: .connected)
+        let newViewController = AlertWalletViewController(wallet: .notConnected)
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
         present(navigationController, animated: true, completion: nil)

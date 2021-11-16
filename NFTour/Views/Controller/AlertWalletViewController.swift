@@ -9,6 +9,7 @@ import UIKit
 
 class AlertWalletViewController: UIViewController {
     
+    var model: Model = Model()
     
     var wallet: WalletConfirm
     let menuView = UIView()
@@ -21,7 +22,7 @@ class AlertWalletViewController: UIViewController {
         return bdView
     }()
     
-    private lazy var buttonClose: CloseButton = CloseButton.createButtonX()
+    private lazy var buttonClose: IconButton = IconButton.createButtonX()
     
     private lazy var iconImage: UIImageView = {
         let iconImage = UIImageView()
@@ -96,12 +97,12 @@ class AlertWalletViewController: UIViewController {
     }
     
     @objc func goToCollection (_sender: UIButton!) {
-//        let newViewController = AlertWalletViewController(wallet: .connected)
-//        let navigationController = UINavigationController(rootViewController: newViewController)
-//        navigationController.modalPresentationStyle = .custom
-//        present(navigationController, animated: true, completion: nil)
-        
-        dismiss(animated: true, completion: nil)
+        let newViewController = HomeGalleryViewController(profile: model.profile)
+
+        let navigationController = UINavigationController(rootViewController: newViewController)
+        navigationController.modalPresentationStyle = .custom
+        present(navigationController, animated: true, completion: nil)
+    
     }
     
     private func setupConstraints() {

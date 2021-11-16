@@ -52,6 +52,7 @@ class OnbordingHomeViewController: UIViewController {
     @objc func pressed(_sender: UIButton!) {
         let newViewController = AddressWalletViewController()
         let navigationController = UINavigationController(rootViewController: newViewController)
+        navigationController.modalPresentationStyle = .custom
         self.present(navigationController, animated: true, completion: nil)
     }
     

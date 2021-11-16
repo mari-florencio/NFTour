@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CloseButton: UIButton {
+class IconButton: UIButton {
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -19,17 +19,32 @@ class CloseButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static func createButtonX() -> CloseButton {
-        let button = CloseButton()
+    static func createButtonX() -> IconButton {
+        let button = IconButton()
         let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20, weight: .medium))
         
         button.setImage(UIImage(systemName: "xmark", withConfiguration: configuration), for: .normal)
         button.tintColor = UIColor(named: "textColorButton")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
 
         button.snp.makeConstraints { make in
             make.height.equalTo(18)
             make.width.equalTo(32)
+            
+        }
+        
+        return button
+    }
+    
+    static func createButtonShowMore() -> IconButton {
+        let button = IconButton()
+        let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20, weight: .bold))
+        
+        button.setImage(UIImage(systemName: "chevron.forward", withConfiguration: configuration), for: .normal)
+        button.tintColor = UIColor(named: "textColor")
+
+        button.snp.makeConstraints { make in
+            make.height.equalTo(24)
+            make.width.equalTo(15)
             
         }
         
