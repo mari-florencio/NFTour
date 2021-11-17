@@ -21,13 +21,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
     // MARK: - Initializer
 
     override init(frame: CGRect) {
-        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "")
+        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "")
         super.init(frame: frame)
         setupUI()
     }
 
     required init?(coder: NSCoder) {
-        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "")
+        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "")
         super.init(coder: coder)
         setupUI()
     }

@@ -11,8 +11,10 @@ class PriceNFTView: UIView {
 
     private lazy var rectangle: UIView = {
         let rectangle = UIView()
-        rectangle.backgroundColor = UIColor(named: "grayWallet")
-        rectangle.layer.cornerRadius = 20
+        rectangle.backgroundColor = UIColor.clear
+        rectangle.layer.borderColor = UIColor(named: "red")?.cgColor
+        rectangle.layer.borderWidth = 1
+        rectangle.layer.cornerRadius = 15
         rectangle.layer.masksToBounds = false
         rectangle.clipsToBounds = true
         
@@ -59,8 +61,6 @@ class PriceNFTView: UIView {
     }
     
     private func setupHierarchy() {
-        // Adiciona botões como subview
-        //addSubview(background)
         self.addSubview(rectangle)
         rectangle.addSubview(stackPrice)
     }
