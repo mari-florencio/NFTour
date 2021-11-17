@@ -29,6 +29,7 @@
 		7A78695C2743E33A000A9944 /* PriceNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78695B2743E33A000A9944 /* PriceNFTView.swift */; };
 		7A78696427443034000A9944 /* InfoCardNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78696327443034000A9944 /* InfoCardNFTView.swift */; };
 		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
+		B21158DC27452BF400F97C84 /* LocalizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DB27452BF400F97C84 /* LocalizationServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		7A78695B2743E33A000A9944 /* PriceNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceNFTView.swift; sourceTree = "<group>"; };
 		7A78696327443034000A9944 /* InfoCardNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardNFTView.swift; sourceTree = "<group>"; };
 		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
+		B21158DB27452BF400F97C84 /* LocalizationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServices.swift; sourceTree = "<group>"; };
 		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 		548D1C16273BEA2B00E0E4D2 /* NFTour */ = {
 			isa = PBXGroup;
 			children = (
+				B21158DA27452BDC00F97C84 /* Services */,
 				548D1C17273BEA2B00E0E4D2 /* AppDelegate.swift */,
 				548D1C19273BEA2B00E0E4D2 /* SceneDelegate.swift */,
 				7A78695227432555000A9944 /* Model */,
@@ -166,6 +169,14 @@
 				7A78695527432B7E000A9944 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B21158DA27452BDC00F97C84 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B21158DB27452BF400F97C84 /* LocalizationServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				7A7869422741EAC0000A9944 /* IconButton.swift in Sources */,
 				7A78695127432476000A9944 /* HomeCollection.swift in Sources */,
 				7A78695A2743D650000A9944 /* InformationNFTViewController.swift in Sources */,
+				B21158DC27452BF400F97C84 /* LocalizationServices.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +454,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JQBX9UWVN;
+				DEVELOPMENT_TEAM = AZA2LHKU7Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

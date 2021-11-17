@@ -75,10 +75,10 @@ class InfoCardNFTView: UIView, UITextViewDelegate {
         
         switch typeInfo {
         case .created:
-            info.text = infoNFT
+            info.text = ""
         case .linkOpenSea:
             let attributedString = NSMutableAttributedString(string: "Conheça a NFT")
-                    attributedString.addAttribute(.link, value: infoNFT, range: NSRange(location: 19, length: 55))
+                    attributedString.addAttribute(.link, value: "", range: NSRange(location: 19, length: 55))
 
             infoTextView.attributedText = attributedString
         }
