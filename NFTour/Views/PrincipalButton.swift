@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ButtonView: UIButton {
+class PrincipalButton: UIButton {
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -20,8 +20,8 @@ class ButtonView: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static func createButton(placeholder: String) -> ButtonView {
-        let button = ButtonView()
+    static func createButton(placeholder: String) -> PrincipalButton {
+        let button = PrincipalButton()
 
         button.setTitle(placeholder, for: .normal)
         button.setTitleColor(UIColor(named: "textColorButton"), for: .normal)

@@ -9,6 +9,8 @@ import UIKit
 
 class HomeCollection: UIView, UICollectionViewDelegate {
 
+    private var viewController: UIViewController?
+    
     struct CollectionData {
         let nft: NFT
     }
@@ -27,7 +29,7 @@ class HomeCollection: UIView, UICollectionViewDelegate {
 
     // MARK: - Properties
 
-    private var carouselData = [CollectionData]()
+    private var collectionData = [CollectionData]()
 
     init() {
         super.init(frame: .zero)
@@ -90,7 +92,7 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.cellId, for: indexPath) as? HomeCollectionViewCell
         else { return UICollectionViewCell() }
 
-        let nft = carouselData[indexPath.row].nft
+        let nft = collectionData[indexPath.row].nft
 
         cell.configure(nft: nft)
 
@@ -119,7 +121,7 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView,
                     layout collectionViewLayout: UICollectionViewLayout,
                     minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 14.0
+        return 20.0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout
@@ -129,13 +131,12 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      
-//        let artwork = carouselData[indexPath.row].artwork
-//
-//        let vc = ArtworkInfoViewController(artwork: artwork)
-//        controller.present(vc, animated: true, completion: nil)
-//        let navVC = UINavigationController(rootViewController: vc)
-//        controller.present(navVC, animated: true, completion: nil)
+        
+        let controller = viewController
+        let nft = collectionData[indexPath.row].nft
+        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft))
+        navigationController.modalPresentationStyle = .custom
+        controller!.present(navigationController, animated: true, completion: nil)
        
     }
 }
@@ -150,8 +151,12 @@ extension HomeCollection {
         carouselLayout.sectionInset = alignmentRectInsets
         carouselCollectionView.collectionViewLayout = carouselLayout
 
-        carouselData = data
+        collectionData = data
         carouselCollectionView.reloadData()
+    }
+    
+    public func takeViewController(view: UIViewController) {
+        viewController = view
     }
 }
 

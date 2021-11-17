@@ -16,6 +16,7 @@ struct NFT: Identifiable {
     let properties: String
     let description: String
     let creator: String
+    let linkOpenSea: String
 }
 
 struct ProfileUser {

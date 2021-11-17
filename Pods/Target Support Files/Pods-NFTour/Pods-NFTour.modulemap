@@ -1,0 +1,6 @@
+framework module Pods_NFTour {
+  umbrella header "Pods-NFTour-umbrella.h"
+
+  export *
+  module * { export * }
+}

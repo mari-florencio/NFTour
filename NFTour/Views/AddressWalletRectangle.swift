@@ -48,7 +48,7 @@ class AddressWalletRectangle: UIView {
         // Adiciona botões como subview
         //addSubview(background)
         self.addSubview(rectangle)
-        self.addSubview(addressWalletLabel)
+        rectangle.addSubview(addressWalletLabel)
     }
     
     private func setupConstraints() {

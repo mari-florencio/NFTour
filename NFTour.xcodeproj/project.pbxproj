@@ -12,9 +12,9 @@
 		548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C1B273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift */; };
 		548D1C21273BEA2E00E0E4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */; };
 		548D1C24273BEA2E00E0E4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C22273BEA2E00E0E4D2 /* LaunchScreen.storyboard */; };
-		7A068450273D5C250074133C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06844F273D5C250074133C /* ButtonView.swift */; };
+		7A068450273D5C250074133C /* PrincipalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06844F273D5C250074133C /* PrincipalButton.swift */; };
 		7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068452273E96DC0074133C /* AddressWalletViewController.swift */; };
-		7A068455273EB1B80074133C /* AddressTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068454273EB1B80074133C /* AddressTextFieldView.swift */; };
+		7A068455273EB1B80074133C /* AddressTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068454273EB1B80074133C /* AddressTextField.swift */; };
 		7A78693E2741E79F000A9944 /* AlertWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */; };
 		7A7869422741EAC0000A9944 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7869412741EAC0000A9944 /* IconButton.swift */; };
 		7A78694627420EA8000A9944 /* HomeGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */; };
@@ -25,6 +25,9 @@
 		7A7869542743258B000A9944 /* NFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7869532743258B000A9944 /* NFT.swift */; };
 		7A78695627432B7E000A9944 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78695527432B7E000A9944 /* Model.swift */; };
 		7A78695827433046000A9944 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78695727433046000A9944 /* HomeCollectionViewCell.swift */; };
+		7A78695A2743D650000A9944 /* InformationNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7869592743D650000A9944 /* InformationNFTViewController.swift */; };
+		7A78695C2743E33A000A9944 /* PriceNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78695B2743E33A000A9944 /* PriceNFTView.swift */; };
+		7A78696427443034000A9944 /* InfoCardNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78696327443034000A9944 /* InfoCardNFTView.swift */; };
 		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +39,9 @@
 		548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		548D1C23273BEA2E00E0E4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		548D1C25273BEA2E00E0E4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A06844F273D5C250074133C /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		7A06844F273D5C250074133C /* PrincipalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalButton.swift; sourceTree = "<group>"; };
 		7A068452273E96DC0074133C /* AddressWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWalletViewController.swift; sourceTree = "<group>"; };
-		7A068454273EB1B80074133C /* AddressTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTextFieldView.swift; sourceTree = "<group>"; };
+		7A068454273EB1B80074133C /* AddressTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTextField.swift; sourceTree = "<group>"; };
 		7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWalletViewController.swift; sourceTree = "<group>"; };
 		7A7869412741EAC0000A9944 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGalleryViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		7A7869532743258B000A9944 /* NFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFT.swift; sourceTree = "<group>"; };
 		7A78695527432B7E000A9944 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7A78695727433046000A9944 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A7869592743D650000A9944 /* InformationNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationNFTViewController.swift; sourceTree = "<group>"; };
+		7A78695B2743E33A000A9944 /* PriceNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceNFTView.swift; sourceTree = "<group>"; };
+		7A78696327443034000A9944 /* InfoCardNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardNFTView.swift; sourceTree = "<group>"; };
 		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
 		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,12 +126,14 @@
 			isa = PBXGroup;
 			children = (
 				7A7869412741EAC0000A9944 /* IconButton.swift */,
-				7A06844F273D5C250074133C /* ButtonView.swift */,
-				7A068454273EB1B80074133C /* AddressTextFieldView.swift */,
+				7A06844F273D5C250074133C /* PrincipalButton.swift */,
+				7A068454273EB1B80074133C /* AddressTextField.swift */,
 				7A78694A2742EA63000A9944 /* AddressWalletRectangle.swift */,
 				7A78694C2742F093000A9944 /* SeparatorView.swift */,
 				7A78695027432476000A9944 /* HomeCollection.swift */,
 				7A78695727433046000A9944 /* HomeCollectionViewCell.swift */,
+				7A78695B2743E33A000A9944 /* PriceNFTView.swift */,
+				7A78696327443034000A9944 /* InfoCardNFTView.swift */,
 				7A06844C273C0D6C0074133C /* Controller */,
 			);
 			path = Views;
@@ -138,6 +146,7 @@
 				7A068452273E96DC0074133C /* AddressWalletViewController.swift */,
 				7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */,
 				7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */,
+				7A7869592743D650000A9944 /* InformationNFTViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,17 +286,20 @@
 				548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */,
 				7A78694627420EA8000A9944 /* HomeGalleryViewController.swift in Sources */,
 				7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */,
-				7A068450273D5C250074133C /* ButtonView.swift in Sources */,
+				7A068450273D5C250074133C /* PrincipalButton.swift in Sources */,
 				7A7869542743258B000A9944 /* NFT.swift in Sources */,
 				7A78694B2742EA63000A9944 /* AddressWalletRectangle.swift in Sources */,
+				7A78696427443034000A9944 /* InfoCardNFTView.swift in Sources */,
+				7A78695C2743E33A000A9944 /* PriceNFTView.swift in Sources */,
 				7A78695827433046000A9944 /* HomeCollectionViewCell.swift in Sources */,
 				548D1C18273BEA2B00E0E4D2 /* AppDelegate.swift in Sources */,
 				7A78694D2742F093000A9944 /* SeparatorView.swift in Sources */,
 				7A78693E2741E79F000A9944 /* AlertWalletViewController.swift in Sources */,
 				7A78694927420F27000A9944 /* UIIView.swift in Sources */,
-				7A068455273EB1B80074133C /* AddressTextFieldView.swift in Sources */,
+				7A068455273EB1B80074133C /* AddressTextField.swift in Sources */,
 				7A7869422741EAC0000A9944 /* IconButton.swift in Sources */,
 				7A78695127432476000A9944 /* HomeCollection.swift in Sources */,
+				7A78695A2743D650000A9944 /* InformationNFTViewController.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

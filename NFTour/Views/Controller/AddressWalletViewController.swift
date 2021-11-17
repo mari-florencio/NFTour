@@ -20,11 +20,11 @@ class AddressWalletViewController: UIViewController{
         return description
     }()
     
-    private lazy var insertWalletTextField: AddressTextFieldView = {
+    private lazy var insertWalletTextField: AddressTextField = {
         .init(placeholder: "Endereço")
     }()
     
-    private lazy var buttonConnect: ButtonView = ButtonView.createButton(placeholder: "Conectar")
+    private lazy var buttonConnect: PrincipalButton = PrincipalButton.createButton(placeholder: "Conectar")
     
     override func viewDidLoad() {
         super.viewDidLoad()

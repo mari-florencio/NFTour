@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AddressTextFieldView: UITextField, UITextFieldDelegate {
+class AddressTextField: UITextField, UITextFieldDelegate {
 
     
     convenience init(placeholder: String) {

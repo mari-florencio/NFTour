@@ -88,6 +88,7 @@ class HomeGalleryViewController: UIViewController {
         setupConstraints()
         
         collectionView.configureView(with: collectionData)
+        collectionView.takeViewController(view: self)
     }
     
     private func setupView(){
