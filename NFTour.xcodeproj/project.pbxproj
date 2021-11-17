@@ -131,8 +131,7 @@
 		7A06844B273C0D550074133C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7A7869412741EAC0000A9944 /* IconButton.swift */,
-				7A06844F273D5C250074133C /* PrincipalButton.swift */,
+				7AD7E85B2745A10A0038B60B /* General Components */,
 				7AD7E854274596910038B60B /* ShowInfoNFT */,
 				7AD7E853274596810038B60B /* InsertAddressWallet */,
 				7AD7E8522745967B0038B60B /* Home */,
@@ -231,6 +230,15 @@
 				548D1C1B273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7AD7E85B2745A10A0038B60B /* General Components */ = {
+			isa = PBXGroup;
+			children = (
+				7A7869412741EAC0000A9944 /* IconButton.swift */,
+				7A06844F273D5C250074133C /* PrincipalButton.swift */,
+			);
+			path = "General Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
