@@ -14,6 +14,8 @@ class HomeGalleryViewController: UIViewController {
     private var collectionView: HomeCollection = .init()
     private var collectionData = [HomeCollection.CollectionData]()
     
+    private let buttonShowMore = IconButton.createButtonShowMore()
+    
     private lazy var stackProfile: UIStackView = {
         let image = UIImageView()
         image.image = profile.picture
@@ -63,8 +65,6 @@ class HomeGalleryViewController: UIViewController {
         stack.axis = .horizontal
         stack.spacing = 5
         
-        let buttonShowMore = IconButton.createButtonShowMore()
-        
         let secondStack = UIStackView(arrangedSubviews: [stack, buttonShowMore])
         secondStack.axis = .horizontal
         secondStack.spacing = 183
@@ -94,10 +94,24 @@ class HomeGalleryViewController: UIViewController {
     private func setupView(){
         view.backgroundColor = UIColor(named: "backgroundColor")
         
+        //colllection
         for nft in profile.nfts {
             collectionData.append(.init(nft: nft))
         }
+        
+        //button
+        buttonShowMore.addTarget(self, action: #selector(pressed(_sender:)), for: .touchUpInside)
     }
+    
+    
+    @objc func pressed(_sender: UIButton!) {
+        let newViewController = GalleyViewController()
+        let navigationController = UINavigationController(rootViewController: newViewController)
+        navigationController.modalPresentationStyle = .custom
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    
     private func setupHierarchy() {
         // Adiciona botões como subview
         //addSubview(background)

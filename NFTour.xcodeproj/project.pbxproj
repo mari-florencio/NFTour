@@ -31,6 +31,8 @@
 		7AD7E84E274549C80038B60B /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E84D274549C80038B60B /* UITextView.swift */; };
 		7AD7E850274596470038B60B /* LocalizationNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E84F274596470038B60B /* LocalizationNFTView.swift */; };
 		7AD7E85A274599E10038B60B /* RemoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E859274599E10038B60B /* RemoveButton.swift */; };
+		7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E85E2745F0890038B60B /* GalleyViewController.swift */; };
+		7AD7E8612745F6270038B60B /* FilterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E8602745F6270038B60B /* FilterSegmentedControl.swift */; };
 		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		7AD7E84D274549C80038B60B /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		7AD7E84F274596470038B60B /* LocalizationNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationNFTView.swift; sourceTree = "<group>"; };
 		7AD7E859274599E10038B60B /* RemoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveButton.swift; sourceTree = "<group>"; };
+		7AD7E85E2745F0890038B60B /* GalleyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleyViewController.swift; sourceTree = "<group>"; };
+		7AD7E8602745F6270038B60B /* FilterSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSegmentedControl.swift; sourceTree = "<group>"; };
 		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
 		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		7A06844B273C0D550074133C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7AD7E85C2745F0610038B60B /* Gallery */,
 				7AD7E85B2745A10A0038B60B /* General Components */,
 				7AD7E854274596910038B60B /* ShowInfoNFT */,
 				7AD7E853274596810038B60B /* InsertAddressWallet */,
@@ -239,6 +244,23 @@
 				7A06844F273D5C250074133C /* PrincipalButton.swift */,
 			);
 			path = "General Components";
+			sourceTree = "<group>";
+		};
+		7AD7E85C2745F0610038B60B /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7AD7E8602745F6270038B60B /* FilterSegmentedControl.swift */,
+				7AD7E85D2745F0700038B60B /* Controller */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7AD7E85D2745F0700038B60B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AD7E85E2745F0890038B60B /* GalleyViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +384,7 @@
 				7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */,
 				7A068450273D5C250074133C /* PrincipalButton.swift in Sources */,
 				7A7869542743258B000A9944 /* NFT.swift in Sources */,
+				7AD7E8612745F6270038B60B /* FilterSegmentedControl.swift in Sources */,
 				7A78694B2742EA63000A9944 /* AddressWalletRectangle.swift in Sources */,
 				7A78696427443034000A9944 /* InfoCardNFTView.swift in Sources */,
 				7AD7E85A274599E10038B60B /* RemoveButton.swift in Sources */,
@@ -376,6 +399,7 @@
 				7A78695127432476000A9944 /* HomeCollection.swift in Sources */,
 				7AD7E84E274549C80038B60B /* UITextView.swift in Sources */,
 				7A78695A2743D650000A9944 /* InformationNFTViewController.swift in Sources */,
+				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,7 +38,7 @@ class InfoCardNFTView: UIView, UITextViewDelegate {
         let rectangle = UIView()
         rectangle.backgroundColor = UIColor(named: "darkGray")
         rectangle.layer.cornerRadius = 10
-        rectangle.layer.masksToBounds = false
+        rectangle.layer.masksToBounds = true
         rectangle.clipsToBounds = true
         
         return rectangle

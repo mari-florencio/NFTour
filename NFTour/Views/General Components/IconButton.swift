@@ -24,7 +24,7 @@ class IconButton: UIButton {
         let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20, weight: .medium))
         
         button.setImage(UIImage(systemName: "xmark", withConfiguration: configuration), for: .normal)
-        button.tintColor = UIColor(named: "textColorButton")
+        button.tintColor = UIColor.white
 
         button.snp.makeConstraints { make in
             make.height.equalTo(18)
