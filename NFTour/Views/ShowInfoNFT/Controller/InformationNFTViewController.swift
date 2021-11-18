@@ -62,12 +62,24 @@ class InformationNFTViewController: UIViewController {
     private lazy var localization : LocalizationNFTView = .init(localization: nft.localization!)
     
     private lazy var button: PrincipalButton = PrincipalButton.createButton(placeholder: "Posicionar NFT")
+
+    @objc func pressed(_sender: UIButton!) {
+        let newViewController = ARViewController()
+        let navigationController = UINavigationController(rootViewController: newViewController)
+        navigationController.modalPresentationStyle = .custom
+        self.present(navigationController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupHierarchy()
         setupConstraints()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     init(nftSelected: NFT){
@@ -81,6 +93,7 @@ class InformationNFTViewController: UIViewController {
     
     private func setupView(){
         view.backgroundColor = UIColor(named: "backgroundColor")
+        button.addTarget(self, action: #selector(pressed(_sender:)), for: .touchUpInside)
   
     }
     private func setupHierarchy() {

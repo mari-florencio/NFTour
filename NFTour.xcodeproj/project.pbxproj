@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B6043652746A780000B618E /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6043642746A780000B618E /* ARView.swift */; };
+		4B6043672746A7D8000B618E /* ARServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6043662746A7D8000B618E /* ARServices.swift */; };
+		4B6043692746AAB7000B618E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6043682746AAB7000B618E /* ARViewController.swift */; };
 		548D1C18273BEA2B00E0E4D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C17273BEA2B00E0E4D2 /* AppDelegate.swift */; };
 		548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C19273BEA2B00E0E4D2 /* SceneDelegate.swift */; };
 		548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C1B273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B6043642746A780000B618E /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		4B6043662746A7D8000B618E /* ARServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARServices.swift; sourceTree = "<group>"; };
+		4B6043682746AAB7000B618E /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		548D1C14273BEA2B00E0E4D2 /* NFTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		548D1C17273BEA2B00E0E4D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		548D1C19273BEA2B00E0E4D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				B21158DF2745E72D00F97C84 /* MapView.swift */,
+				4B6043642746A780000B618E /* ARView.swift */,
+				4B6043682746AAB7000B618E /* ARViewController.swift */,
 				7AD7E85C2745F0610038B60B /* Gallery */,
 				7AD7E85B2745A10A0038B60B /* General Components */,
 				7AD7E854274596910038B60B /* ShowInfoNFT */,
@@ -278,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				B21158DB27452BF400F97C84 /* LocalizationServices.swift */,
+				4B6043662746A7D8000B618E /* ARServices.swift */,
 				B21158DD2745342400F97C84 /* CalibrationService.swift */,
 			);
 			path = Services;
@@ -407,6 +416,7 @@
 				B21158E02745E72D00F97C84 /* MapView.swift in Sources */,
 				7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */,
 				7AD7E86727467E4A0038B60B /* IconButton.swift in Sources */,
+				4B6043652746A780000B618E /* ARView.swift in Sources */,
 				7A7869542743258B000A9944 /* NFT.swift in Sources */,
 				7AD7E8612745F6270038B60B /* FilterSegmentedControl.swift in Sources */,
 				7A78696427443034000A9944 /* InfoCardNFTView.swift in Sources */,
@@ -416,8 +426,10 @@
 				548D1C18273BEA2B00E0E4D2 /* AppDelegate.swift in Sources */,
 				7A78694D2742F093000A9944 /* SeparatorView.swift in Sources */,
 				7A78693E2741E79F000A9944 /* AlertWalletViewController.swift in Sources */,
+				4B6043692746AAB7000B618E /* ARViewController.swift in Sources */,
 				7A78694927420F27000A9944 /* UIView.swift in Sources */,
 				7A78695127432476000A9944 /* HomeCollection.swift in Sources */,
+				4B6043672746A7D8000B618E /* ARServices.swift in Sources */,
 				7AD7E84E274549C80038B60B /* UITextView.swift in Sources */,
 				B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */,
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
@@ -566,9 +578,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZA2LHKU7Z;
+				DEVELOPMENT_TEAM = 5JCA2V9H3D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = AR;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -594,9 +609,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JQBX9UWVN;
+				DEVELOPMENT_TEAM = 5JCA2V9H3D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = AR;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
