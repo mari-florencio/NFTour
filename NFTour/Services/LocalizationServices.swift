@@ -76,9 +76,6 @@ final class LocalizationServices {
         return location
     }
     
-    func getCalibratedNorth() {
-        
-    }
 }
 
 
