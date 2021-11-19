@@ -106,10 +106,9 @@ class InformationNFTViewController: UIViewController {
         
         if nft.isPositioned{
             view.addSubview(localization)
-        }
-        
-        view.addSubview(button)
-        
+        }else{
+            view.addSubview(button)
+        } 
     }
     
     private func setupConstraints() {
