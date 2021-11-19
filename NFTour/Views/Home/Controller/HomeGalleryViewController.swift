@@ -18,6 +18,7 @@ class HomeGalleryViewController: UIViewController {
     
     private lazy var stackProfile: UIStackView = {
         let image = UIImageView()
+        image.frame = CGRect(x: 0, y: 0, width: 58, height: 58)
         image.image = profile.picture
         image.makeRounded()
         image.contentMode = .scaleAspectFill
