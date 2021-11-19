@@ -30,7 +30,7 @@ class AddressWalletViewController: UIViewController{
         super.viewDidLoad()
         self.navigationController!.navigationBar.backgroundColor = UIColor(named: "backgroundColor")
         self.navigationController!.navigationBar.isTranslucent = false
-        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "textColor")]
+        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "textColor") as Any]
         
         self.title = "Connect Wallet"
         self.navigationController?.navigationBar.prefersLargeTitles = true

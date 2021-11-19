@@ -10,6 +10,7 @@ import UIKit
 class HomeCollection: UIView, UICollectionViewDelegate {
 
     private var viewController: UIViewController?
+    private var view: TypeView
     
     struct CollectionData {
         let nft: NFT
@@ -31,7 +32,8 @@ class HomeCollection: UIView, UICollectionViewDelegate {
 
     private var collectionData = [CollectionData]()
 
-    init() {
+    init(typeView: TypeView) {
+        self.view = typeView
         super.init(frame: .zero)
         setupUI()
     }
@@ -58,8 +60,13 @@ private extension HomeCollection {
     func setupCollectionView() {
         backgroundColor = UIColor(named: "backgroundColor")
         let carouselLayout = UICollectionViewFlowLayout()
-        carouselLayout.scrollDirection = .horizontal
-        //carouselLayout.itemSize = .zero
+        
+        switch view {
+        case .home:
+            carouselLayout.scrollDirection = .horizontal
+        case .gallery :
+            carouselLayout.scrollDirection = .vertical
+        }
         carouselLayout.sectionInset = .zero
         carouselCollectionView.collectionViewLayout = carouselLayout
         carouselCollectionView.showsVerticalScrollIndicator = false
@@ -84,7 +91,12 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        switch view {
+        case .home:
+            return 4
+        case .gallery :
+            return collectionData.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -103,25 +115,30 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
 
         let width : CGFloat
         let height : CGFloat
-
-        if indexPath.item == 0 || indexPath.item == 3 {
-            // First section
-            width = 153
-            height = 241
-            return CGSize(width: width, height: height)
-            
-        } else {
-            // Second section
-            width = 153
-            height = 153
-            return CGSize(width: width, height: height)
+        switch view {
+        case .home:
+            if indexPath.item == 0 || indexPath.item == 3 {
+                // First section
+                width = 153
+                height = 241
+                return CGSize(width: width, height: height)
+                
+            } else {
+                // Second section
+                width = 153
+                height = 153
+                return CGSize(width: width, height: height)
+            }
+        case .gallery :
+            return CGSize(width: 159, height: 163)
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView,
                     layout collectionViewLayout: UICollectionViewLayout,
                     minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20.0
+        return 16.0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout
@@ -146,12 +163,20 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
 extension HomeCollection {
     public func configureView(with data: [CollectionData]) {
         let carouselLayout = UICollectionViewFlowLayout()
-        carouselLayout.scrollDirection = .horizontal
-        //carouselLayout.itemSize = .zero
+        switch view {
+        case .home:
+            carouselLayout.scrollDirection = .horizontal
+        case .gallery :
+            carouselLayout.scrollDirection = .vertical
+        }
         carouselLayout.sectionInset = alignmentRectInsets
         carouselCollectionView.collectionViewLayout = carouselLayout
 
         collectionData = data
+        carouselCollectionView.reloadData()
+    }
+    
+    public func loadData(){
         carouselCollectionView.reloadData()
     }
     
@@ -160,4 +185,7 @@ extension HomeCollection {
     }
 }
 
-
+enum TypeView {
+    case gallery
+    case home
+}

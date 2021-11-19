@@ -11,7 +11,7 @@ class HomeGalleryViewController: UIViewController {
 
     private var profile: ProfileUser
     
-    private var collectionView: HomeCollection = .init()
+    private var collectionView: HomeCollection = .init(typeView: .home)
     private var collectionData = [HomeCollection.CollectionData]()
     
     private let buttonShowMore = IconButton.createButtonShowMore()
@@ -105,7 +105,7 @@ class HomeGalleryViewController: UIViewController {
     
     
     @objc func pressed(_sender: UIButton!) {
-        let newViewController = GalleyViewController()
+        let newViewController = GalleyViewController(profile: profile)
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
         self.present(navigationController, animated: true, completion: nil)

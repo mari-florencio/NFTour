@@ -153,16 +153,13 @@ class InformationNFTViewController: UIViewController {
 
             }
         }
-        
-        button.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            
-            if nft.isPositioned{
-                make.top.equalTo(localization.snp.bottom).offset(25)
-            }else{
+        else{
+            button.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-20)
                 make.top.equalTo(descriptionText.snp.bottom).offset(47)
-            }
+                }
+            
         }
         
         
