@@ -5,4 +5,6 @@ use_frameworks!
 
 target 'NFTour' do
     pod 'SnapKit', '~> 5.0.0'
+    pod 'RealmSwift'
 end
+
