@@ -90,7 +90,7 @@ class TabBarbViewController: UITabBarController {
     func setupMiddleButton() {
         let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 73, height: 73))
         var menuButtonFrame = menuButton.frame
-        menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - 42
+        menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - 45
         menuButtonFrame.origin.x = view.bounds.width/2 - menuButtonFrame.size.width/2
         menuButton.frame = menuButtonFrame
         
