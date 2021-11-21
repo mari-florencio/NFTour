@@ -1,13 +1,15 @@
 //
-//  HomeCollection.swift
+//  HorizontalCollection.swift
 //  NFTour
 //
-//  Created by Maria Luiza Amaral on 15/11/21.
+//  Created by Guilerme Barciki on 19/11/21.
 //
+
+import Foundation
 
 import UIKit
 
-class HomeCollection: UIView, UICollectionViewDelegate {
+class HorizontalCollection: UIView {
 
     private var viewController: UIViewController?
     
@@ -43,13 +45,13 @@ class HomeCollection: UIView, UICollectionViewDelegate {
 
     private enum LayoutMetrics {
         static let leadingCarosel: CGFloat = 18
-        static let heightCarosel: CGFloat = 410
+        static let heightCarosel: CGFloat = 100
     }
 }
 
 // MARK: - Setups
 
-private extension HomeCollection {
+private extension HorizontalCollection {
     func setupUI() {
         backgroundColor = .clear
         setupCollectionView()
@@ -66,7 +68,6 @@ private extension HomeCollection {
         addSubview(carouselCollectionView)
         carouselCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.height.equalTo(LayoutMetrics.heightCarosel)
@@ -78,7 +79,7 @@ private extension HomeCollection {
 
 // MARK: - UICollectionViewDataSource
 
-extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HorizontalCollection: UICollectionViewDataSource,  UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -86,6 +87,9 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Model().profile.nfts.count
     }
+    
+    
+    
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -99,36 +103,18 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let width : CGFloat
-        let height : CGFloat
-
-        if indexPath.item == 0 || indexPath.item == 3 {
-            // First section
-            width = 153
-            height = 241
-            return CGSize(width: width, height: height)
-            
-        } else {
-            // Second section
-            width = 153
-            height = 153
-            return CGSize(width: width, height: height)
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let width : CGFloat
+//        let height : CGFloat
+//
+//            width = 120
+//            height = 120
+//            return CGSize(width: width, height: height)
+//
+//    }
     
-    func collectionView(_ collectionView: UICollectionView,
-                    layout collectionViewLayout: UICollectionViewLayout,
-                    minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20.0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout
-        collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16.0
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -143,12 +129,13 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
 
 // MARK: - Public
 
-extension HomeCollection {
+extension HorizontalCollection {
     public func configureView(with data: [CollectionData]) {
         let carouselLayout = UICollectionViewFlowLayout()
-        carouselLayout.scrollDirection = .vertical
-        //carouselLayout.itemSize = .zero
-        carouselLayout.sectionInset = alignmentRectInsets
+        carouselLayout.scrollDirection = .horizontal
+        carouselLayout.itemSize = CGSize(width: 100, height: 100)
+        //carouselLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         carouselCollectionView.collectionViewLayout = carouselLayout
 
         collectionData = data
@@ -159,5 +146,3 @@ extension HomeCollection {
         viewController = view
     }
 }
-
-

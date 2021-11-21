@@ -39,6 +39,8 @@
 		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
 		B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DB27452BF400F97C84 /* ConversionServices.swift */; };
 		B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DD2745342400F97C84 /* CalibrationService.swift */; };
+		B213FA5A27482B1000BE76DA /* MapScreenCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA5927482B1000BE76DA /* MapScreenCollectionView.swift */; };
+		B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA5B274844F900BE76DA /* HorizontalCollection.swift */; };
 		B2E2987A2746BAFF00D43F02 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E298792746BAFF00D43F02 /* MapView.swift */; };
 		B2E2987C2746BB0900D43F02 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2987B2746BB0900D43F02 /* MapViewController.swift */; };
 		B2E2987F2746BBD500D43F02 /* LocalizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2987E2746BBD500D43F02 /* LocalizationServices.swift */; };
@@ -79,6 +81,8 @@
 		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
 		B21158DB27452BF400F97C84 /* ConversionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionServices.swift; sourceTree = "<group>"; };
 		B21158DD2745342400F97C84 /* CalibrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationService.swift; sourceTree = "<group>"; };
+		B213FA5927482B1000BE76DA /* MapScreenCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenCollectionView.swift; sourceTree = "<group>"; };
+		B213FA5B274844F900BE76DA /* HorizontalCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollection.swift; sourceTree = "<group>"; };
 		B2E298792746BAFF00D43F02 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = ../../../../Downloads/MapView.swift; sourceTree = "<group>"; };
 		B2E2987B2746BB0900D43F02 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../../../../../../Downloads/MapViewController.swift; sourceTree = "<group>"; };
 		B2E2987E2746BBD500D43F02 /* LocalizationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServices.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				4B6043642746A780000B618E /* ARView.swift */,
+				B2E298802747347A00D43F02 /* Map */,
 				B2E298792746BAFF00D43F02 /* MapView.swift */,
 				4B6043682746AAB7000B618E /* ARViewController.swift */,
 				7AD7E85C2745F0610038B60B /* Gallery */,
@@ -295,6 +300,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B2E298802747347A00D43F02 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B213FA5927482B1000BE76DA /* MapScreenCollectionView.swift */,
+				B213FA5B274844F900BE76DA /* HorizontalCollection.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,8 +449,10 @@
 				7A78694927420F27000A9944 /* UIView.swift in Sources */,
 				7A78695127432476000A9944 /* HomeCollection.swift in Sources */,
 				4B6043672746A7D8000B618E /* ARServices.swift in Sources */,
+				B213FA5A27482B1000BE76DA /* MapScreenCollectionView.swift in Sources */,
 				7AD7E84E274549C80038B60B /* UITextView.swift in Sources */,
 				B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */,
+				B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */,
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
 				B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */,
 				7AD7E86527467E430038B60B /* PrincipalButton.swift in Sources */,
