@@ -110,6 +110,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4B10C52E274BD631008AD9BC /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				4B6043642746A780000B618E /* ARView.swift */,
+				4B6043682746AAB7000B618E /* ARViewController.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 		4CFD7BBD1B2D621B119FCC72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,8 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B21158DF2745E72D00F97C84 /* MapView.swift */,
-				4B6043642746A780000B618E /* ARView.swift */,
-				4B6043682746AAB7000B618E /* ARViewController.swift */,
+				4B10C52E274BD631008AD9BC /* AR */,
 				7AD7E886274977E20038B60B /* TabBar */,
 				7AD7E85C2745F0610038B60B /* Gallery */,
 				7AD7E85B2745A10A0038B60B /* General Components */,

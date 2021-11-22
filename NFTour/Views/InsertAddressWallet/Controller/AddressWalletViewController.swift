@@ -46,6 +46,10 @@ class AddressWalletViewController: UIViewController{
     }
     
     @objc func tryConnect (_sender: UIButton!) {
+        
+        LocalDataService().createUser()
+        LocalDataService().editUserWallet(wallet: insertWalletTextField.text!)
+        
         let newViewController = AlertWalletViewController(wallet: .notConnected)
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
