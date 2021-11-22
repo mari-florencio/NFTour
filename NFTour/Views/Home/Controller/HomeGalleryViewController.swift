@@ -14,7 +14,7 @@ class HomeGalleryViewController: UIViewController {
     private var collectionView: HomeCollection = .init(typeView: .home)
     private var collectionData = [HomeCollection.CollectionData]()
     
-    private let buttonShowMore = IconButton.createButtonShowMore()
+    private let buttonShowMore = IconButton.createButtonShowMore(size: 20, weight: .bold)
     
     private lazy var stackProfile: UIStackView = {
         let image = UIImageView()
@@ -65,6 +65,11 @@ class HomeGalleryViewController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [icon, title])
         stack.axis = .horizontal
         stack.spacing = 5
+        
+        buttonShowMore.snp.makeConstraints { make in
+            make.height.equalTo(24)
+            make.width.equalTo(15)
+        }
         
         let secondStack = UIStackView(arrangedSubviews: [stack, buttonShowMore])
         secondStack.axis = .horizontal

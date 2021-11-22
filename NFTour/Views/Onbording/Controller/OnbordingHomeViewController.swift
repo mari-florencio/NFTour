@@ -10,44 +10,42 @@ import SnapKit
 
 class OnbordingHomeViewController: UIViewController {
     
+    private var iconButton = IconButton.createButtonShowMore(size: 30, weight: .regular)
+    
     private lazy var backgroundImage: UIImageView = {
         let backgroundImage = UIImageView()
-        backgroundImage.image = UIImage(named: "backgroundImage")
+        backgroundImage.image = UIImage.gifImageWithName("gifNFT")
         
         return backgroundImage
     }()
     
     private lazy var logo: UIImageView = {
         let logoViewImage = UIImageView()
-        logoViewImage.image = UIImage(named: "logo")
+        logoViewImage.image = UIImage(named: "logoVermelha")
         logoViewImage.contentMode = .scaleAspectFit
         
         return logoViewImage
     }()
     
-    private lazy var titleHome: UILabel = {
+    private lazy var stackTitle: UIStackView = {
         let title = UILabel()
-        title.text = "Mostre suas NFTs para o mundo!"
+        title.text = "That's how we get tangible"
         title.textColor = UIColor(named: "textColor")
-        title.font = UIFont.systemFont(ofSize: 27, weight: .bold)
-        title.numberOfLines = 0
-        title.textAlignment = .center
+        title.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        title.numberOfLines = 2
+        title.textAlignment = .left
         
-        return title
-    }()
-    
-    private lazy var subtitle: UILabel = {
-        let subtitle = UILabel()
-        subtitle.text = "Insira o endereço da sua carteira da OpenSea para fazer parte dessa realidade"
-        subtitle.textColor = UIColor(named: "textColor")
-        subtitle.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        subtitle.numberOfLines = 0
-        subtitle.textAlignment = .center
+//        iconButton.snp.makeConstraints { make in
+//            make.height.equalTo(22)
+//            make.width.equalTo(30)
+//        }
         
-        return subtitle
+        let stack = UIStackView(arrangedSubviews: [title, iconButton])
+        stack.axis = .horizontal
+        stack.spacing = 114
+        
+        return stack
     }()
-    
-    private lazy var buttonStart: PrincipalButton = PrincipalButton.createButton(placeholder: "Começar")
 
     @objc func pressed(_sender: UIButton!) {
         let newViewController = AddressWalletViewController()
@@ -76,53 +74,38 @@ class OnbordingHomeViewController: UIViewController {
     private func setupHierarchy() {
         // Adiciona botões como subview
         //addSubview(background)
-        view.addSubview(logo)
         view.addSubview(backgroundImage)
-        view.addSubview(titleHome)
-        view.addSubview(subtitle)
-        view.addSubview(buttonStart)
+        view.addSubview(logo)
+        view.addSubview(stackTitle)
     }
     
     private func setupView(){
         view.backgroundColor = UIColor(named: "backgroundColor")
         
-        buttonStart.addTarget(self, action: #selector(pressed(_sender:)), for: .touchUpInside)
+        iconButton.addTarget(self, action: #selector(pressed(_sender:)), for: .touchUpInside)
     }
     
     private func setupConstraints() {
-        logo.snp.makeConstraints { make in
-            make.height.equalTo(146)
-            make.width.equalTo(28)
-            make.top.equalToSuperview().offset(60)
-            make.leading.equalTo(114)
-            make.trailing.equalTo(-114)
-        }
-        
         backgroundImage.snp.makeConstraints { make in
-            make.height.equalTo(233)
-            make.width.equalTo(286)
-            make.top.equalTo(logo.snp.bottom).offset(60)
-            make.leading.equalTo(47)
-            make.trailing.equalTo(-42)
+            make.height.equalTo(521)
+            make.width.equalTo(view.snp.width)
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
-        titleHome.snp.makeConstraints { make in
-            make.top.equalTo(backgroundImage.snp.bottom).offset(61)
-            make.leading.equalToSuperview().offset(68)
-            make.trailing.equalToSuperview().offset(-68)
+        logo.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.width.equalTo(156)
+            make.top.equalTo(backgroundImage.snp.bottom).offset(57)
+            make.leading.equalTo(23)
+            make.trailing.equalTo(-195)
         }
         
-        subtitle.snp.makeConstraints { make in
-            make.top.equalTo(titleHome.snp.bottom).offset(19)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().offset(-38)
-        }
-        
-        buttonStart.snp.makeConstraints { make in
-            make.top.equalTo(subtitle.snp.bottom).offset(48)
-            make.leading.equalToSuperview().offset(12)
-            make.trailing.equalToSuperview().offset(-12)
-            
+        stackTitle.snp.makeConstraints { make in
+            make.top.equalTo(logo.snp.bottom).offset(66)
+            make.leading.equalToSuperview().offset(25)
+            make.trailing.equalToSuperview().offset(-25)
         }
     }
 
