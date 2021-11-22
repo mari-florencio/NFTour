@@ -18,6 +18,8 @@
 		548D1C21273BEA2E00E0E4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */; };
 		548D1C24273BEA2E00E0E4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C22273BEA2E00E0E4D2 /* LaunchScreen.storyboard */; };
 		7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068452273E96DC0074133C /* AddressWalletViewController.swift */; };
+		7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A314C59274BCA9300244DEC /* gifLoader.swift */; };
+		7A314C5C274BCB4600244DEC /* gifNFT.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A314C5B274BCB4600244DEC /* gifNFT.gif */; };
 		7A78693E2741E79F000A9944 /* AlertWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */; };
 		7A78694627420EA8000A9944 /* HomeGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */; };
 		7A78694927420F27000A9944 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78694827420F27000A9944 /* UIView.swift */; };
@@ -39,7 +41,7 @@
 		7AD7E86B27467E7E0038B60B /* AddressTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E86A27467E7E0038B60B /* AddressTextField.swift */; };
 		7AD7E86D27467F480038B60B /* InformationNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E86C27467F480038B60B /* InformationNFTViewController.swift */; };
 		7AD7E86F27467F8C0038B60B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E86E27467F8C0038B60B /* MapViewController.swift */; };
-		7AD7E885274977DB0038B60B /* TabBarbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E884274977DB0038B60B /* TabBarbViewController.swift */; };
+		7AD7E885274977DB0038B60B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E884274977DB0038B60B /* TabBarViewController.swift */; };
 		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
 		B21158DC27452BF400F97C84 /* LocalizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DB27452BF400F97C84 /* LocalizationServices.swift */; };
 		B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DD2745342400F97C84 /* CalibrationService.swift */; };
@@ -60,6 +62,8 @@
 		548D1C23273BEA2E00E0E4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		548D1C25273BEA2E00E0E4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A068452273E96DC0074133C /* AddressWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWalletViewController.swift; sourceTree = "<group>"; };
+		7A314C59274BCA9300244DEC /* gifLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifLoader.swift; sourceTree = "<group>"; };
+		7A314C5B274BCB4600244DEC /* gifNFT.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifNFT.gif; sourceTree = "<group>"; };
 		7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWalletViewController.swift; sourceTree = "<group>"; };
 		7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGalleryViewController.swift; sourceTree = "<group>"; };
 		7A78694827420F27000A9944 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -81,7 +85,7 @@
 		7AD7E86A27467E7E0038B60B /* AddressTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressTextField.swift; path = NFTour/Views/InsertAddressWallet/AddressTextField.swift; sourceTree = SOURCE_ROOT; };
 		7AD7E86C27467F480038B60B /* InformationNFTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationNFTViewController.swift; sourceTree = "<group>"; };
 		7AD7E86E27467F8C0038B60B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		7AD7E884274977DB0038B60B /* TabBarbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarbViewController.swift; sourceTree = "<group>"; };
+		7AD7E884274977DB0038B60B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
 		B21158DB27452BF400F97C84 /* LocalizationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServices.swift; sourceTree = "<group>"; };
 		B21158DD2745342400F97C84 /* CalibrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationService.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 		7AD7E8512745966F0038B60B /* Onbording */ = {
 			isa = PBXGroup;
 			children = (
+				7A314C59274BCA9300244DEC /* gifLoader.swift */,
+				7A314C5B274BCB4600244DEC /* gifNFT.gif */,
 				7AD7E858274597510038B60B /* Controller */,
 			);
 			path = Onbording;
@@ -293,7 +299,7 @@
 		7AD7E886274977E20038B60B /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				7AD7E884274977DB0038B60B /* TabBarbViewController.swift */,
+				7AD7E884274977DB0038B60B /* TabBarViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A314C5C274BCB4600244DEC /* gifNFT.gif in Resources */,
 				548D1C24273BEA2E00E0E4D2 /* LaunchScreen.storyboard in Resources */,
 				548D1C21273BEA2E00E0E4D2 /* Assets.xcassets in Resources */,
 			);
@@ -424,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD7E86B27467E7E0038B60B /* AddressTextField.swift in Sources */,
+				7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */,
 				7AD7E850274596470038B60B /* LocalizationNFTView.swift in Sources */,
 				7A78695627432B7E000A9944 /* Model.swift in Sources */,
 				548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */,
@@ -452,7 +460,7 @@
 				7AD7E84E274549C80038B60B /* UITextView.swift in Sources */,
 				B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */,
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
-				7AD7E885274977DB0038B60B /* TabBarbViewController.swift in Sources */,
+				7AD7E885274977DB0038B60B /* TabBarViewController.swift in Sources */,
 				B21158DC27452BF400F97C84 /* LocalizationServices.swift in Sources */,
 				7AD7E86527467E430038B60B /* PrincipalButton.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,

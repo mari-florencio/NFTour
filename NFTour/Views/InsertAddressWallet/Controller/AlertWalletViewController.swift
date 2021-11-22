@@ -97,7 +97,7 @@ class AlertWalletViewController: UIViewController {
     }
     
     @objc func goToCollection (_sender: UIButton!) {
-        let newViewController = TabBarbViewController(profile: model.profile)
+        let newViewController = TabBarViewController(profile: model.profile)
 
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
