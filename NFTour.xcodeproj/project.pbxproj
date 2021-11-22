@@ -41,9 +41,13 @@
 		7AD7E86F27467F8C0038B60B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E86E27467F8C0038B60B /* MapViewController.swift */; };
 		7AD7E885274977DB0038B60B /* TabBarbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7E884274977DB0038B60B /* TabBarbViewController.swift */; };
 		ACD99C6265FC59BDBE7AF665 /* Pods_NFTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */; };
-		B21158DC27452BF400F97C84 /* LocalizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DB27452BF400F97C84 /* LocalizationServices.swift */; };
+		B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DB27452BF400F97C84 /* ConversionServices.swift */; };
 		B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DD2745342400F97C84 /* CalibrationService.swift */; };
-		B21158E02745E72D00F97C84 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21158DF2745E72D00F97C84 /* MapView.swift */; };
+		B213FA5A27482B1000BE76DA /* MapScreenCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA5927482B1000BE76DA /* MapScreenCollectionView.swift */; };
+		B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA5B274844F900BE76DA /* HorizontalCollection.swift */; };
+		B2E2987A2746BAFF00D43F02 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E298792746BAFF00D43F02 /* MapView.swift */; };
+		B2E2987C2746BB0900D43F02 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2987B2746BB0900D43F02 /* MapViewController.swift */; };
+		B2E2987F2746BBD500D43F02 /* LocalizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E2987E2746BBD500D43F02 /* LocalizationServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,9 +87,13 @@
 		7AD7E86E27467F8C0038B60B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7AD7E884274977DB0038B60B /* TabBarbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarbViewController.swift; sourceTree = "<group>"; };
 		9CABF6941965274980290372 /* Pods-NFTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.release.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.release.xcconfig"; sourceTree = "<group>"; };
-		B21158DB27452BF400F97C84 /* LocalizationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServices.swift; sourceTree = "<group>"; };
+		B21158DB27452BF400F97C84 /* ConversionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionServices.swift; sourceTree = "<group>"; };
 		B21158DD2745342400F97C84 /* CalibrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationService.swift; sourceTree = "<group>"; };
-		B21158DF2745E72D00F97C84 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B213FA5927482B1000BE76DA /* MapScreenCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenCollectionView.swift; sourceTree = "<group>"; };
+		B213FA5B274844F900BE76DA /* HorizontalCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollection.swift; sourceTree = "<group>"; };
+		B2E298792746BAFF00D43F02 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = ../../../../Downloads/MapView.swift; sourceTree = "<group>"; };
+		B2E2987B2746BB0900D43F02 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../../../../../../Downloads/MapViewController.swift; sourceTree = "<group>"; };
+		B2E2987E2746BBD500D43F02 /* LocalizationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServices.swift; sourceTree = "<group>"; };
 		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,8 +164,9 @@
 		7A06844B273C0D550074133C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B21158DF2745E72D00F97C84 /* MapView.swift */,
 				4B6043642746A780000B618E /* ARView.swift */,
+				B2E298802747347A00D43F02 /* Map */,
+				B2E298792746BAFF00D43F02 /* MapView.swift */,
 				4B6043682746AAB7000B618E /* ARViewController.swift */,
 				7AD7E886274977E20038B60B /* TabBar */,
 				7AD7E85C2745F0610038B60B /* Gallery */,
@@ -250,8 +259,8 @@
 		7AD7E857274597350038B60B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B2E2987B2746BB0900D43F02 /* MapViewController.swift */,
 				7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */,
-				7AD7E86E27467F8C0038B60B /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,12 +310,22 @@
 		B21158DA27452BDC00F97C84 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B21158DB27452BF400F97C84 /* LocalizationServices.swift */,
+				B21158DB27452BF400F97C84 /* ConversionServices.swift */,
 				4B6043662746A7D8000B618E /* ARServices.swift */,
 				B21158DD2745342400F97C84 /* CalibrationService.swift */,
 				4BD2DE4727487692002088D4 /* LocalDataService.swift */,
+				B2E2987E2746BBD500D43F02 /* LocalizationServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B2E298802747347A00D43F02 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B213FA5927482B1000BE76DA /* MapScreenCollectionView.swift */,
+				B213FA5B274844F900BE76DA /* HorizontalCollection.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E2987C2746BB0900D43F02 /* MapViewController.swift in Sources */,
 				7AD7E86B27467E7E0038B60B /* AddressTextField.swift in Sources */,
+				B2E2987F2746BBD500D43F02 /* LocalizationServices.swift in Sources */,
 				7AD7E850274596470038B60B /* LocalizationNFTView.swift in Sources */,
 				7A78695627432B7E000A9944 /* Model.swift in Sources */,
 				548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */,
@@ -449,14 +470,15 @@
 				7A78694927420F27000A9944 /* UIView.swift in Sources */,
 				7A78695127432476000A9944 /* HomeCollection.swift in Sources */,
 				4B6043672746A7D8000B618E /* ARServices.swift in Sources */,
+				B213FA5A27482B1000BE76DA /* MapScreenCollectionView.swift in Sources */,
 				7AD7E84E274549C80038B60B /* UITextView.swift in Sources */,
 				B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */,
+				B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */,
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
+				B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */,
 				7AD7E885274977DB0038B60B /* TabBarbViewController.swift in Sources */,
-				B21158DC27452BF400F97C84 /* LocalizationServices.swift in Sources */,
 				7AD7E86527467E430038B60B /* PrincipalButton.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
-				7AD7E86F27467F8C0038B60B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +620,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = AZA2LHKU7Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = AR;
@@ -629,7 +651,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = AZA2LHKU7Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = AR;
