@@ -89,6 +89,7 @@ class HomeGalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setupHierarchy()
         setupConstraints()

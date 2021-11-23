@@ -31,14 +31,14 @@ class OnbordingHomeViewController: UIViewController {
         let title = UILabel()
         title.text = "That's how we get tangible"
         title.textColor = UIColor(named: "textColor")
-        title.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        title.font = UIFont.systemFont(ofSize: 24, weight: .heavy)
         title.numberOfLines = 2
         title.textAlignment = .left
         
-//        iconButton.snp.makeConstraints { make in
-//            make.height.equalTo(22)
-//            make.width.equalTo(30)
-//        }
+        iconButton.snp.makeConstraints { make in
+            make.height.equalTo(22)
+            make.width.equalTo(30)
+        }
         
         let stack = UIStackView(arrangedSubviews: [title, iconButton])
         stack.axis = .horizontal
@@ -106,6 +106,7 @@ class OnbordingHomeViewController: UIViewController {
             make.top.equalTo(logo.snp.bottom).offset(66)
             make.leading.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().offset(-25)
+            make.height.equalTo(60)
         }
     }
 

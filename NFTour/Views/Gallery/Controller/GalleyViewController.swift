@@ -16,17 +16,12 @@ class GalleyViewController: UIViewController {
     
     private let segmentedFilter: FilterSegmentedControl = .createSegmented()
     
+    private lazy var backButton: BackButton = BackButton.makeBackButton(placeholder: "Home", textColor: UIColor(named: "textColor")!)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.navigationBar.backgroundColor = UIColor(named: "backgroundColor")
-        self.navigationController!.navigationBar.isTranslucent = false
-        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "textColor") as Any]
-        
-        self.navigationItem.leftItemsSupplementBackButton = true
-        
-        self.title = "Minha coleção"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        
+    
+        setupNavigation()
         setupView()
         setupHierarchy()
         setupConstraints()
@@ -36,9 +31,8 @@ class GalleyViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-            loadData()
-        }
+        super.viewDidAppear(animated)
+    }
     
     init(profile: ProfileUser){
         self.profile = profile
@@ -47,6 +41,20 @@ class GalleyViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupNavigation(){
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftItemsSupplementBackButton = true
+        
+        self.navigationController!.navigationBar.backgroundColor = UIColor(named: "backgroundColor")
+        self.navigationController!.navigationBar.isTranslucent = false
+        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "textColor") as Any]
+        self.title = "My collection"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
     }
     
     private func setupView(){
@@ -79,6 +87,10 @@ class GalleyViewController: UIViewController {
         collectionView.configureView(with: collectionData)
         collectionView.takeViewController(view: self)
         viewDidAppear(true)
+    }
+    
+    @objc func goBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func loadData() {

@@ -8,8 +8,9 @@
 import UIKit
 
 class InformationNFTViewController: UIViewController {
-
+    
     private var nft: NFT
+    private var screenBefore: ScreenBefore
     
     private lazy var imageNFT: UIImageView = {
         let imageNFT = UIImageView()
@@ -61,17 +62,23 @@ class InformationNFTViewController: UIViewController {
     
     private lazy var localization : LocalizationNFTView = .init(localization: nft.localization!)
     
-    private lazy var button: PrincipalButton = PrincipalButton.createButton(placeholder: "Posicionar NFT")
-
-    @objc func pressed(_sender: UIButton!) {
-        let newViewController = ARViewController()
-        let navigationController = UINavigationController(rootViewController: newViewController)
-        navigationController.modalPresentationStyle = .custom
-        self.present(navigationController, animated: true, completion: nil)
-    }
+    private lazy var button: PrincipalButton = PrincipalButton.createButton(placeholder: "Place NFT")
+    
+    private lazy var backButton: BackButton = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        switch screenBefore {
+        case .galery:
+            backButton = BackButton.makeBackButton(placeholder: "Galery", textColor: UIColor.white)
+        case .home:
+            backButton = BackButton.makeBackButton(placeholder: "Home", textColor: UIColor.white)
+        }
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftItemsSupplementBackButton = true
+        
         setupView()
         setupHierarchy()
         setupConstraints()
@@ -79,11 +86,11 @@ class InformationNFTViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    init(nftSelected: NFT){
+    init(nftSelected: NFT, before: ScreenBefore){
         self.nft = nftSelected
+        self.screenBefore = before
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -91,10 +98,21 @@ class InformationNFTViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func goBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func pressed(_sender: UIButton!) {
+        let newViewController = ARViewController()
+        let navigationController = UINavigationController(rootViewController: newViewController)
+        navigationController.modalPresentationStyle = .custom
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
     private func setupView(){
         view.backgroundColor = UIColor(named: "backgroundColor")
         button.addTarget(self, action: #selector(pressed(_sender:)), for: .touchUpInside)
-  
+        
     }
     private func setupHierarchy() {
         // Adiciona botões como subview
@@ -140,7 +158,7 @@ class InformationNFTViewController: UIViewController {
             make.top.equalTo(secondStack.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-
+            
         }
         
         if nft.isPositioned{
@@ -149,7 +167,7 @@ class InformationNFTViewController: UIViewController {
                 make.leading.equalToSuperview().offset(20)
                 make.trailing.equalToSuperview().offset(-20)
                 make.height.equalTo(41)
-
+                
             }
         }
         else{
@@ -157,12 +175,14 @@ class InformationNFTViewController: UIViewController {
                 make.leading.equalToSuperview().offset(20)
                 make.trailing.equalToSuperview().offset(-20)
                 make.top.equalTo(descriptionText.snp.bottom).offset(47)
-                }
+            }
             
         }
         
-        
-        
-    
     }
+}
+
+enum ScreenBefore{
+    case galery
+    case home
 }

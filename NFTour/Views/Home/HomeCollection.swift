@@ -151,7 +151,7 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
         
         let controller = viewController
         let nft = collectionData[indexPath.row].nft
-        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft))
+        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft, before: .home))
         navigationController.modalPresentationStyle = .custom
         controller!.present(navigationController, animated: true, completion: nil)
        
