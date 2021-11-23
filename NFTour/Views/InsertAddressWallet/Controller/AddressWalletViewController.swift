@@ -11,7 +11,7 @@ class AddressWalletViewController: UIViewController{
 
     private lazy var descriptionLabel: UILabel = {
         let description = UILabel()
-        description.text = "Insira o endereço da sua carteira conectada à OpenSea"
+        description.text = "Enter the address of your OpenSea wallet"
         description.textColor = UIColor(named: "textColor")
         description.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         description.numberOfLines = 0
@@ -21,10 +21,10 @@ class AddressWalletViewController: UIViewController{
     }()
     
     private lazy var insertWalletTextField: AddressTextField = {
-        .init(placeholder: "Endereço")
+        .init(placeholder: "Anddress")
     }()
     
-    private lazy var buttonConnect: PrincipalButton = PrincipalButton.createButton(placeholder: "Conectar")
+    private lazy var buttonConnect: PrincipalButton =  .createButtonDisable(placeholder: "Connect")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +41,10 @@ class AddressWalletViewController: UIViewController{
     
     private func setupView(){
         view.backgroundColor = UIColor(named: "backgroundColor")
-        
+        buttonConnect.isEnabled = false
         buttonConnect.addTarget(self, action: #selector(tryConnect(_sender:)), for: .touchUpInside)
+        
+        insertWalletTextField.addTarget(self, action: #selector(textFieldEditingDidChange(_:)), for: UIControl.Event.editingChanged)
     }
     
     @objc func tryConnect (_sender: UIButton!) {
@@ -81,4 +83,14 @@ class AddressWalletViewController: UIViewController{
         
     }
     
+}
+
+extension AddressWalletViewController: UITextFieldDelegate {
+    
+    @objc func textFieldEditingDidChange(_ sender: UITextField){
+        buttonConnect.isEnabled = true
+        buttonConnect.setTitleColor(UIColor.white, for: .normal)
+        buttonConnect.backgroundColor = UIColor(named: "backgroundButton")
+        
+    }
 }

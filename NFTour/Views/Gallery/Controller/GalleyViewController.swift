@@ -22,6 +22,8 @@ class GalleyViewController: UIViewController {
         self.navigationController!.navigationBar.isTranslucent = false
         self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "textColor") as Any]
         
+        self.navigationItem.leftItemsSupplementBackButton = true
+        
         self.title = "Minha coleção"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         

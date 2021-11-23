@@ -39,4 +39,24 @@ class PrincipalButton: UIButton {
         
         return button
     }
+    
+    static func createButtonDisable(placeholder: String) -> PrincipalButton {
+        let button = PrincipalButton()
+
+        button.setTitle(placeholder, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = UIColor(named: "darkGray")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        button.layer.cornerRadius = 13
+        button.clipsToBounds = true
+
+        
+        button.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.width.equalTo(351)
+            
+        }
+        
+        return button
+    }
 }
