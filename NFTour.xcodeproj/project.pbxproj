@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B06F4AE274E69D000D1896D /* ConfirmationModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B06F4AD274E69CF00D1896D /* ConfirmationModalViewController.swift */; };
 		4B6043672746A7D8000B618E /* ARServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6043662746A7D8000B618E /* ARServices.swift */; };
-		4BB0EE27274E8591008A443C /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0EE26274E8591008A443C /* ARView.swift */; };
-		4BB0EE29274E8599008A443C /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0EE28274E8599008A443C /* ARViewController.swift */; };
 		4BB0EE2B274E8736008A443C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0EE2A274E8736008A443C /* MapViewController.swift */; };
 		4BB0EE2F274E8771008A443C /* LocalizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0EE2E274E8771008A443C /* LocalizationServices.swift */; };
 		4BD2DE4827487692002088D4 /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2DE4727487692002088D4 /* LocalDataService.swift */; };
@@ -53,13 +51,13 @@
 		B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA5B274844F900BE76DA /* HorizontalCollection.swift */; };
 		B213FA62274BD17E00BE76DA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA61274BD17E00BE76DA /* MapView.swift */; };
 		B213FA64274D0C3700BE76DA /* TabBarFakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA63274D0C3700BE76DA /* TabBarFakeViewController.swift */; };
+		B252BE16274E89B700B8101F /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252BE14274E89B700B8101F /* ARView.swift */; };
+		B252BE17274E89B700B8101F /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252BE15274E89B700B8101F /* ARViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B06F4AD274E69CF00D1896D /* ConfirmationModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModalViewController.swift; sourceTree = "<group>"; };
 		4B6043662746A7D8000B618E /* ARServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARServices.swift; sourceTree = "<group>"; };
-		4BB0EE26274E8591008A443C /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARView.swift; path = ../../../../../../../Desktop/ARView.swift; sourceTree = "<group>"; };
-		4BB0EE28274E8599008A443C /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = ../../../../../../../Desktop/ARViewController.swift; sourceTree = "<group>"; };
 		4BB0EE2A274E8736008A443C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4BB0EE2E274E8771008A443C /* LocalizationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationServices.swift; sourceTree = "<group>"; };
 		4BD2DE4727487692002088D4 /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
@@ -104,6 +102,8 @@
 		B213FA5B274844F900BE76DA /* HorizontalCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollection.swift; sourceTree = "<group>"; };
 		B213FA61274BD17E00BE76DA /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B213FA63274D0C3700BE76DA /* TabBarFakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFakeViewController.swift; sourceTree = "<group>"; };
+		B252BE14274E89B700B8101F /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		B252BE15274E89B700B8101F /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +131,8 @@
 		4B10C52E274BD631008AD9BC /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				4BB0EE26274E8591008A443C /* ARView.swift */,
-				4BB0EE28274E8599008A443C /* ARViewController.swift */,
+				B252BE14274E89B700B8101F /* ARView.swift */,
+				B252BE15274E89B700B8101F /* ARViewController.swift */,
 				4B06F4AD274E69CF00D1896D /* ConfirmationModalViewController.swift */,
 			);
 			path = AR;
@@ -473,6 +473,7 @@
 				7A452A3E274DE0F700823136 /* NoNFTCard.swift in Sources */,
 				7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */,
 				7AD7E850274596470038B60B /* LocalizationNFTView.swift in Sources */,
+				B252BE17274E89B700B8101F /* ARViewController.swift in Sources */,
 				7A78695627432B7E000A9944 /* Model.swift in Sources */,
 				548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */,
 				7AD7E86D27467F480038B60B /* InformationNFTViewController.swift in Sources */,
@@ -480,7 +481,6 @@
 				4BB0EE2B274E8736008A443C /* MapViewController.swift in Sources */,
 				B213FA62274BD17E00BE76DA /* MapView.swift in Sources */,
 				7AD7E86927467E5B0038B60B /* AddressWalletRectangle.swift in Sources */,
-				4BB0EE27274E8591008A443C /* ARView.swift in Sources */,
 				4BD2DE4827487692002088D4 /* LocalDataService.swift in Sources */,
 				4BD2DE4A274876C1002088D4 /* LocalData.swift in Sources */,
 				4B06F4AE274E69D000D1896D /* ConfirmationModalViewController.swift in Sources */,
@@ -491,6 +491,7 @@
 				7A78696427443034000A9944 /* InfoCardNFTView.swift in Sources */,
 				7AD7E85A274599E10038B60B /* RemoveButton.swift in Sources */,
 				7A78695C2743E33A000A9944 /* PriceNFTView.swift in Sources */,
+				B252BE16274E89B700B8101F /* ARView.swift in Sources */,
 				7A78695827433046000A9944 /* HomeCollectionViewCell.swift in Sources */,
 				548D1C18273BEA2B00E0E4D2 /* AppDelegate.swift in Sources */,
 				7A78694D2742F093000A9944 /* SeparatorView.swift in Sources */,
@@ -504,7 +505,6 @@
 				B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */,
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
 				7AD7E885274977DB0038B60B /* TabBarViewController.swift in Sources */,
-				4BB0EE29274E8599008A443C /* ARViewController.swift in Sources */,
 				B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */,
 				7A452A3C274D293100823136 /* BackButton.swift in Sources */,
 				B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */,
@@ -651,7 +651,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = AZA2LHKU7Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = AR;
@@ -682,7 +682,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = AZA2LHKU7Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = AR;

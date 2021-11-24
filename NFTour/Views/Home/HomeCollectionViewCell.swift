@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
     
     private lazy var nftImage = UIImageView()
     private var nftSelected: NFT
+    
 
 
     // MARK: - Properties
@@ -21,13 +23,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
     // MARK: - Initializer
 
     override init(frame: CGRect) {
-        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "")
+        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "", coordinates: CLLocation(latitude: 0, longitude: 0))
         super.init(frame: frame)
         setupUI()
     }
 
     required init?(coder: NSCoder) {
-        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "")
+        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "", coordinates: CLLocation(latitude: 0, longitude: 0))
         super.init(coder: coder)
         setupUI()
     }

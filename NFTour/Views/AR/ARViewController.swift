@@ -16,6 +16,7 @@ enum ARState {
 class ARViewController: UIViewController {
     
     var arView = ARView()
+    let arServices = ARServices()
     public var state: ARState = .notPlaced
     
     private lazy var positionLabel: UILabel = {
@@ -112,7 +113,7 @@ class ARViewController: UIViewController {
             positionLabel.removeFromSuperview()
             state = .placed
             
-            ARServices().placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft1")!)
+            arServices.placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft1")!)
             displayModal()
         } else {
             self.presentingViewController?.dismiss(animated: false, completion: nil)
@@ -121,7 +122,7 @@ class ARViewController: UIViewController {
     }
     
     func clearARView() {
-        ARServices().clearARView(arView: arView.arSceneView)
+        arServices.clearARView(arView: arView.arSceneView)
         state = .notPlaced
         displayPosition()
     }

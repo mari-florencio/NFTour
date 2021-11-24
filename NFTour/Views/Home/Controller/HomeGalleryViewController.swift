@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class HomeGalleryViewController: UIViewController {
+class HomeGalleryViewController: UIViewController, CLLocationManagerDelegate {
 
     private var profile = Model().profile
     
@@ -96,7 +98,6 @@ class HomeGalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         setupHierarchy()
         setupConstraints()
@@ -177,4 +178,6 @@ class HomeGalleryViewController: UIViewController {
         }
         
     }
+    
+    
 }

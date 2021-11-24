@@ -11,12 +11,13 @@ import MapKit
 
 class LocalizationServices: NSObject,  CLLocationManagerDelegate {
     
-    lazy var locationManager : CLLocationManager = {
+    var locationManager : CLLocationManager = {
         let locationManager = CLLocationManager()
         if (CLLocationManager.headingAvailable()) {
             locationManager.headingFilter = 1
+            
+            
             locationManager.startUpdatingHeading()
-            locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             
             locationManager.startUpdatingLocation()
@@ -24,9 +25,11 @@ class LocalizationServices: NSObject,  CLLocationManagerDelegate {
         return locationManager
     }()
     
-//    let locationManager = CLLocationManager()
-   private var compassHeading: Double =  0.0
-    
+   
+    override init () {
+        super.init()
+        locationManager.delegate = self
+    }
    
     
     func getUserLocation() -> CLLocation {
@@ -37,18 +40,30 @@ class LocalizationServices: NSObject,  CLLocationManagerDelegate {
     
     func getCompassHeading() -> Double {
         
-        return compassHeading
+        return locationManager.heading?.trueHeading ?? 1.0
+    
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         
-        compassHeading = newHeading.trueHeading
+        
         
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locations.first
         locations.last
+    }
+    
+    func isNFTnear(nftCoordinate: CLLocation) -> Bool {
+        
+        let userLocation = getUserLocation()
+        if userLocation.distance(from: nftCoordinate) > 20 {
+            return false
+        } else {
+            return true
+        }
+        
     }
     
     
