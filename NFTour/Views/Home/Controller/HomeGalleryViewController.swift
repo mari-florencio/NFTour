@@ -9,7 +9,7 @@ import UIKit
 
 class HomeGalleryViewController: UIViewController {
 
-    private var profile: ProfileUser
+    private var profile = Model().profile
     
     private var collectionView: HomeCollection = .init(typeView: .home)
     private var collectionData = [HomeCollection.CollectionData]()
@@ -78,6 +78,13 @@ class HomeGalleryViewController: UIViewController {
         return secondStack
     }()
     
+    private lazy var fakeTabBar: TabBarFakeViewController = {
+        let tabBar = TabBarFakeViewController(isParentHomeGallery: true)
+        
+        tabBar.view.translatesAutoresizingMaskIntoConstraints = false
+        return tabBar
+    }()
+    
     init(profile: ProfileUser){
         self.profile = profile
         super.init(nibName: nil, bundle: nil)
@@ -93,7 +100,7 @@ class HomeGalleryViewController: UIViewController {
         setupView()
         setupHierarchy()
         setupConstraints()
-        
+        print("checando aqui: \(self.isKind(of: HomeGalleryViewController.self))")
         collectionView.configureView(with: collectionData)
         collectionView.takeViewController(view: self)
     }
@@ -122,10 +129,14 @@ class HomeGalleryViewController: UIViewController {
     private func setupHierarchy() {
         // Adiciona botões como subview
         //addSubview(background)
+        
         view.addSubview(stackProfile)
         view.addSubview(separator)
         view.addSubview(stackGallery)
         view.addSubview(collectionView)
+        addChild(fakeTabBar)
+        view.addSubview(fakeTabBar.view)
+        
     }
     
     private func setupConstraints() {
@@ -156,6 +167,13 @@ class HomeGalleryViewController: UIViewController {
             make.top.equalTo(stackGallery.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(23)
             make.trailing.equalToSuperview().offset(-23)
+        }
+        
+        fakeTabBar.view.snp.makeConstraints { make in
+            make.height.equalTo(116)
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make .trailing.equalToSuperview()
         }
         
     }

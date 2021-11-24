@@ -10,7 +10,7 @@ import CoreLocation
 import ARKit
 import MapKit
 
-final class LocalizationServices {
+final class ConversionServices {
     
     func convertoToARCoordinates(userCoordinate: CLLocation, coord2: CLLocation, coord2Altitude: Double, degrees: Double) -> SCNVector3 {
         // MARK: - converte graus em radianos
