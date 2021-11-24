@@ -7,9 +7,11 @@
 
 import UIKit
 import SnapKit
+import CoreLocation
 
-class OnbordingHomeViewController: UIViewController {
+class OnbordingHomeViewController: UIViewController, CLLocationManagerDelegate  {
     
+    private var locationManager = CLLocationManager()
     private var iconButton = IconButton.createButtonShowMore(size: 30, weight: .regular)
     
     private lazy var backgroundImage: UIImageView = {
@@ -56,6 +58,7 @@ class OnbordingHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestUserGPSAuthorization()
         setupView()
         setupHierarchy()
         setupConstraints()
@@ -108,6 +111,11 @@ class OnbordingHomeViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-25)
             make.height.equalTo(60)
         }
+    }
+    private func requestUserGPSAuthorization() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     }
 
 }
