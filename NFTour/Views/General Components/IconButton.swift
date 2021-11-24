@@ -35,18 +35,12 @@ class IconButton: UIButton {
         return button
     }
     
-    static func createButtonShowMore() -> IconButton {
+    static func createButtonShowMore(size: CGFloat, weight: UIFont.Weight) -> IconButton {
         let button = IconButton()
-        let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20, weight: .bold))
+        let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: size, weight: weight))
         
         button.setImage(UIImage(systemName: "chevron.forward", withConfiguration: configuration), for: .normal)
         button.tintColor = UIColor(named: "textColor")
-
-        button.snp.makeConstraints { make in
-            make.height.equalTo(24)
-            make.width.equalTo(15)
-            
-        }
         
         return button
     }

@@ -9,12 +9,12 @@ import UIKit
 
 class HomeGalleryViewController: UIViewController {
 
-    private var profile: ProfileUser
+    private var profile = Model().profile
     
     private var collectionView: HomeCollection = .init(typeView: .home)
     private var collectionData = [HomeCollection.CollectionData]()
     
-    private let buttonShowMore = IconButton.createButtonShowMore()
+    private let buttonShowMore = IconButton.createButtonShowMore(size: 20, weight: .bold)
     
     private lazy var stackProfile: UIStackView = {
         let image = UIImageView()
@@ -66,11 +66,23 @@ class HomeGalleryViewController: UIViewController {
         stack.axis = .horizontal
         stack.spacing = 5
         
+        buttonShowMore.snp.makeConstraints { make in
+            make.height.equalTo(24)
+            make.width.equalTo(15)
+        }
+        
         let secondStack = UIStackView(arrangedSubviews: [stack, buttonShowMore])
         secondStack.axis = .horizontal
         secondStack.spacing = 183
         
         return secondStack
+    }()
+    
+    private lazy var fakeTabBar: TabBarFakeViewController = {
+        let tabBar = TabBarFakeViewController(isParentHomeGallery: true)
+        
+        tabBar.view.translatesAutoresizingMaskIntoConstraints = false
+        return tabBar
     }()
     
     init(profile: ProfileUser){
@@ -84,10 +96,11 @@ class HomeGalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setupHierarchy()
         setupConstraints()
-        
+        print("checando aqui: \(self.isKind(of: HomeGalleryViewController.self))")
         collectionView.configureView(with: collectionData)
         collectionView.takeViewController(view: self)
     }
@@ -116,17 +129,21 @@ class HomeGalleryViewController: UIViewController {
     private func setupHierarchy() {
         // Adiciona botões como subview
         //addSubview(background)
+        
         view.addSubview(stackProfile)
         view.addSubview(separator)
         view.addSubview(stackGallery)
         view.addSubview(collectionView)
+        addChild(fakeTabBar)
+        view.addSubview(fakeTabBar.view)
+        
     }
     
     private func setupConstraints() {
         stackProfile.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(109)
-            make.leading.equalTo(27)
-            make.trailing.equalTo(-140)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-148)
             
         }
         
@@ -140,16 +157,23 @@ class HomeGalleryViewController: UIViewController {
         
         stackGallery.snp.makeConstraints { make in
             make.top.equalTo(separator.snp.bottom).offset(24)
-            make.leading.equalTo(27)
-            make.trailing.equalTo(-30)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-20)
             
         }
         
         collectionView.snp.makeConstraints { make in
-            make.height.equalTo(415)
-            make.top.equalTo(stackGallery.snp.bottom).offset(22)
-            make.leading.equalToSuperview().offset(26)
-            make.trailing.equalToSuperview().offset(-27)
+            make.height.equalTo(440)
+            make.top.equalTo(stackGallery.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(23)
+            make.trailing.equalToSuperview().offset(-23)
+        }
+        
+        fakeTabBar.view.snp.makeConstraints { make in
+            make.height.equalTo(116)
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make .trailing.equalToSuperview()
         }
         
     }

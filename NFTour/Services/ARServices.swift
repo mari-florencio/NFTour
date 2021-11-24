@@ -10,6 +10,8 @@ import CoreLocation
 import ARKit
 
 final class ARServices {
+    let localizationServices = LocalizationServices()
+    let conversionServices = ConversionServices()
     
     func placeAsset(arView: ARSCNView, asset: UIImage) {
         
@@ -49,8 +51,11 @@ final class ARServices {
         // MARK: - Set coordinates
         let arCoordinates = node.position
         
-        print("posicao: \(LocalizationServices().convertToGeoCoord(arCoodinates: arCoordinates, userCoordinate: CLLocation(latitude: -25.386008, longitude: -49.220696), degree: 0))")
+        let userCoordinates = localizationServices.getUserLocation()
         
+        print("posicao: \(conversionServices.convertToGeoCoord(arCoodinates: arCoordinates, userCoordinate: userCoordinates, degree: 0))")
+        
+        print("heading: \(localizationServices.getCompassHeading())")
         
     }
     
