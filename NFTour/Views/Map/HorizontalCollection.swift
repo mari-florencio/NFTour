@@ -120,7 +120,7 @@ extension HorizontalCollection: UICollectionViewDataSource,  UICollectionViewDel
         
         let controller = viewController
         let nft = collectionData[indexPath.row].nft
-        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft))
+        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft, view: .gallery))
         navigationController.modalPresentationStyle = .custom
         controller!.present(navigationController, animated: true, completion: nil)
        
