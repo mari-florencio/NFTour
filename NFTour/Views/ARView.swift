@@ -49,6 +49,7 @@ class ARView: UIView, ARSCNViewDelegate {
         addSubviews()
         constraintSubviews()
         
+        
     }
 
     required init?(coder: NSCoder) {

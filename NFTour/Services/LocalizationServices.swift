@@ -31,7 +31,6 @@ class LocalizationServices: NSObject,  CLLocationManagerDelegate {
     
     func getUserLocation() -> CLLocation {
         
-        
         return locationManager.location ?? CLLocation(latitude: 0.0, longitude: 0.0)
         
     }

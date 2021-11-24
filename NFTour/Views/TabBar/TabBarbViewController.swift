@@ -12,6 +12,7 @@ class TabBarbViewController: UITabBarController {
     // MARK: - Initialization
     
     private var profile: ProfileUser
+    private var menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 73, height: 73))
     
     init(profile: ProfileUser) {
         self.profile = profile
@@ -24,8 +25,8 @@ class TabBarbViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        start()
-        setupMiddleButton()
+       // start() //desliguei a tabbar
+        //setupMiddleButton()
         
     }
     
@@ -80,7 +81,8 @@ class TabBarbViewController: UITabBarController {
             let cameraVC = HomeGalleryViewController(profile: profile)
             navController.pushViewController(cameraVC, animated: true)
         case .map:
-            let mapVC = HomeGalleryViewController(profile: profile)
+            let mapVC = MapViewController()
+            
             navController.pushViewController(mapVC, animated: true)
         }
         
@@ -88,7 +90,7 @@ class TabBarbViewController: UITabBarController {
     }
     
     func setupMiddleButton() {
-        let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 73, height: 73))
+        
         var menuButtonFrame = menuButton.frame
         menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - 45
         menuButtonFrame.origin.x = view.bounds.width/2 - menuButtonFrame.size.width/2

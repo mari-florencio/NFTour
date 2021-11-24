@@ -10,7 +10,7 @@ import UIKit
 class AlertWalletViewController: UIViewController {
     
     var model: Model = Model()
-    
+    private var profile = Model().profile
     var wallet: WalletConfirm
     let menuView = UIView()
     let menuHeight = UIScreen.main.bounds.height / 2.5
@@ -97,7 +97,7 @@ class AlertWalletViewController: UIViewController {
     }
     
     @objc func goToCollection (_sender: UIButton!) {
-        let newViewController = TabBarbViewController(profile: model.profile)
+        let newViewController = HomeGalleryViewController(profile: profile )
 
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
