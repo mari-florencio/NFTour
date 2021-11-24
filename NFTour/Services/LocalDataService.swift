@@ -48,4 +48,8 @@ class LocalDataService {
             LocalDataService.realm.delete(location)
         }
     }
+    
+    public func printRealmPath() {
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
 }

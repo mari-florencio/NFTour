@@ -54,4 +54,10 @@ final class ARServices {
         
     }
     
+    func clearARView(arView: ARSCNView) {
+        arView.scene.rootNode.enumerateChildNodes({ (node, stop) in
+            node.removeFromParentNode()
+        })
+    }
+    
 }

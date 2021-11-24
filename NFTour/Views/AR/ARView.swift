@@ -23,18 +23,18 @@ class ARView: UIView, ARSCNViewDelegate {
     
     
     // MARK: - Buttons
-    
-    var infoButton: UIButton = {
-        let button = UIButton()
 
-        button.backgroundColor = .clear
-        //button.setTitle("Add Asset", for: .normal)
-        button.setImage(UIImage(systemName: "info.circle"), for: .normal)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        return button
-    }()
+//    var infoButton: UIButton = {
+//        let button = UIButton()
+//
+//        button.backgroundColor = .clear
+//        //button.setTitle("Add Asset", for: .normal)
+//        button.setImage(UIImage(systemName: "info.circle"), for: .normal)
+//        button.tintColor = .white
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//
+//        return button
+//    }()
     
     // MARK: - Initialization
 
@@ -57,7 +57,7 @@ class ARView: UIView, ARSCNViewDelegate {
 
     func addSubviews() {
         addSubview(arSceneView)
-        addSubview(infoButton)
+//        addSubview(infoButton)
     }
 
     func constraintSubviews() {
@@ -66,10 +66,6 @@ class ARView: UIView, ARSCNViewDelegate {
             arSceneView.leadingAnchor.constraint(equalTo: leadingAnchor),
             arSceneView.trailingAnchor.constraint(equalTo: trailingAnchor),
             arSceneView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            infoButton.heightAnchor.constraint(equalToConstant: 40),
-            infoButton.widthAnchor.constraint(equalToConstant: 40),
-            infoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            infoButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
         ])
     }
 }

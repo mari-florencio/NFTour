@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B06F4AE274E69D000D1896D /* ConfirmationModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B06F4AD274E69CF00D1896D /* ConfirmationModalViewController.swift */; };
 		4B6043652746A780000B618E /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6043642746A780000B618E /* ARView.swift */; };
 		4B6043672746A7D8000B618E /* ARServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6043662746A7D8000B618E /* ARServices.swift */; };
 		4B6043692746AAB7000B618E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6043682746AAB7000B618E /* ARViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B06F4AD274E69CF00D1896D /* ConfirmationModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModalViewController.swift; sourceTree = "<group>"; };
 		4B6043642746A780000B618E /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		4B6043662746A7D8000B618E /* ARServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARServices.swift; sourceTree = "<group>"; };
 		4B6043682746AAB7000B618E /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4B10C52E274BD631008AD9BC /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				4B6043642746A780000B618E /* ARView.swift */,
+				4B6043682746AAB7000B618E /* ARViewController.swift */,
+				4B06F4AD274E69CF00D1896D /* ConfirmationModalViewController.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 		4CFD7BBD1B2D621B119FCC72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,8 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				B21158DF2745E72D00F97C84 /* MapView.swift */,
-				4B6043642746A780000B618E /* ARView.swift */,
-				4B6043682746AAB7000B618E /* ARViewController.swift */,
+				4B10C52E274BD631008AD9BC /* AR */,
 				7AD7E886274977E20038B60B /* TabBar */,
 				7AD7E85C2745F0610038B60B /* Gallery */,
 				7AD7E85B2745A10A0038B60B /* General Components */,
@@ -433,6 +444,7 @@
 				4BD2DE4827487692002088D4 /* LocalDataService.swift in Sources */,
 				B21158E02745E72D00F97C84 /* MapView.swift in Sources */,
 				4BD2DE4A274876C1002088D4 /* LocalData.swift in Sources */,
+				4B06F4AE274E69D000D1896D /* ConfirmationModalViewController.swift in Sources */,
 				7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */,
 				7AD7E86727467E4A0038B60B /* IconButton.swift in Sources */,
 				4B6043652746A780000B618E /* ARView.swift in Sources */,
