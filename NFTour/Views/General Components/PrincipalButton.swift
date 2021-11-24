@@ -53,7 +53,7 @@ class PrincipalButton: UIButton {
         
         button.snp.makeConstraints { make in
             make.height.equalTo(60)
-            make.width.equalTo(351)
+            make.width.equalTo(335)
             
         }
         

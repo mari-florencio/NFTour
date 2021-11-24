@@ -21,6 +21,7 @@
 		7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A314C59274BCA9300244DEC /* gifLoader.swift */; };
 		7A314C5C274BCB4600244DEC /* gifNFT.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A314C5B274BCB4600244DEC /* gifNFT.gif */; };
 		7A452A3C274D293100823136 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A452A3B274D293100823136 /* BackButton.swift */; };
+		7A452A3E274DE0F700823136 /* NoNFTCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A452A3D274DE0F700823136 /* NoNFTCard.swift */; };
 		7A78693E2741E79F000A9944 /* AlertWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */; };
 		7A78694627420EA8000A9944 /* HomeGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */; };
 		7A78694927420F27000A9944 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78694827420F27000A9944 /* UIView.swift */; };
@@ -66,6 +67,7 @@
 		7A314C59274BCA9300244DEC /* gifLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifLoader.swift; sourceTree = "<group>"; };
 		7A314C5B274BCB4600244DEC /* gifNFT.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifNFT.gif; sourceTree = "<group>"; };
 		7A452A3B274D293100823136 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		7A452A3D274DE0F700823136 /* NoNFTCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNFTCard.swift; sourceTree = "<group>"; };
 		7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWalletViewController.swift; sourceTree = "<group>"; };
 		7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGalleryViewController.swift; sourceTree = "<group>"; };
 		7A78694827420F27000A9944 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				7A78694C2742F093000A9944 /* SeparatorView.swift */,
 				7A78695027432476000A9944 /* HomeCollection.swift */,
 				7A78695727433046000A9944 /* HomeCollectionViewCell.swift */,
+				7A452A3D274DE0F700823136 /* NoNFTCard.swift */,
 				7AD7E857274597350038B60B /* Controller */,
 			);
 			path = Home;
@@ -434,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD7E86B27467E7E0038B60B /* AddressTextField.swift in Sources */,
+				7A452A3E274DE0F700823136 /* NoNFTCard.swift in Sources */,
 				7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */,
 				7AD7E850274596470038B60B /* LocalizationNFTView.swift in Sources */,
 				7A78695627432B7E000A9944 /* Model.swift in Sources */,

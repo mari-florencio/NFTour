@@ -98,7 +98,7 @@ class OnbordingHomeViewController: UIViewController {
             make.height.equalTo(30)
             make.width.equalTo(156)
             make.top.equalTo(backgroundImage.snp.bottom).offset(57)
-            make.leading.equalTo(23)
+            make.leading.equalTo(25)
             make.trailing.equalTo(-195)
         }
         

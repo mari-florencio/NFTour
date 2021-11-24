@@ -131,8 +131,8 @@ class HomeGalleryViewController: UIViewController {
     private func setupConstraints() {
         stackProfile.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(109)
-            make.leading.equalTo(27)
-            make.trailing.equalTo(-140)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-148)
             
         }
         
@@ -146,16 +146,16 @@ class HomeGalleryViewController: UIViewController {
         
         stackGallery.snp.makeConstraints { make in
             make.top.equalTo(separator.snp.bottom).offset(24)
-            make.leading.equalTo(27)
-            make.trailing.equalTo(-30)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-20)
             
         }
         
         collectionView.snp.makeConstraints { make in
-            make.height.equalTo(415)
-            make.top.equalTo(stackGallery.snp.bottom).offset(22)
-            make.leading.equalToSuperview().offset(26)
-            make.trailing.equalToSuperview().offset(-27)
+            make.height.equalTo(440)
+            make.top.equalTo(stackGallery.snp.bottom).offset(24)
+            make.leading.equalToSuperview().offset(23)
+            make.trailing.equalToSuperview().offset(-23)
         }
         
     }

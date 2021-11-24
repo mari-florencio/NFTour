@@ -117,7 +117,7 @@ class GalleyViewController: UIViewController {
         
         collectionView.snp.makeConstraints { make in
             make.height.equalTo(600)
-            make.top.equalTo(segmentedFilter.snp.bottom).offset(22)
+            make.top.equalTo(segmentedFilter.snp.bottom).offset(27)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }

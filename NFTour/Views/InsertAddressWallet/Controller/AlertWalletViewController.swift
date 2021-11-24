@@ -13,7 +13,7 @@ class AlertWalletViewController: UIViewController {
     
     var wallet: WalletConfirm
     let menuView = UIView()
-    let menuHeight = UIScreen.main.bounds.height / 2.5
+    let menuHeight = UIScreen.main.bounds.height / 2.4
     var isPresenting = false
     
     lazy var backdropView: UIView = {

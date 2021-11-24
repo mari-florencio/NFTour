@@ -65,20 +65,20 @@ class AddressWalletViewController: UIViewController{
     private func setupConstraints() {
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(21)
-            make.leading.equalTo(21)
+            make.leading.equalTo(20)
             make.trailing.equalTo(-84)
         }
         
         insertWalletTextField.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(24)
-            make.leading.equalTo(15)
-            make.trailing.equalTo(-15)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-20)
         }
         
         buttonConnect.snp.makeConstraints { make in
             make.top.equalTo(insertWalletTextField.snp.bottom).offset(16)
-            make.leading.equalTo(15)
-            make.trailing.equalTo(-15)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-20)
         }
         
     }

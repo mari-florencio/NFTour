@@ -10,7 +10,7 @@ import UIKit
 class HomeCollection: UIView, UICollectionViewDelegate {
 
     private var viewController: UIViewController?
-    private var view: TypeView
+    private var typeView: TypeView
     
     struct CollectionData {
         let nft: NFT
@@ -33,7 +33,7 @@ class HomeCollection: UIView, UICollectionViewDelegate {
     private var collectionData = [CollectionData]()
 
     init(typeView: TypeView) {
-        self.view = typeView
+        self.typeView = typeView
         super.init(frame: .zero)
         setupUI()
     }
@@ -61,7 +61,7 @@ private extension HomeCollection {
         backgroundColor = UIColor(named: "backgroundColor")
         let carouselLayout = UICollectionViewFlowLayout()
         
-        switch view {
+        switch typeView {
         case .home:
             carouselLayout.scrollDirection = .horizontal
         case .gallery :
@@ -91,7 +91,7 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch view {
+        switch typeView {
         case .home:
             return 4
         case .gallery :
@@ -115,18 +115,18 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
 
         let width : CGFloat
         let height : CGFloat
-        switch view {
+        switch typeView {
         case .home:
             if indexPath.item == 0 || indexPath.item == 3 {
                 // First section
-                width = 153
-                height = 241
+                width = 159
+                height = 250
                 return CGSize(width: width, height: height)
                 
             } else {
                 // Second section
-                width = 153
-                height = 153
+                width = 159
+                height = 163
                 return CGSize(width: width, height: height)
             }
         case .gallery :
@@ -138,20 +138,28 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView,
                     layout collectionViewLayout: UICollectionViewLayout,
                     minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 16.0
+        switch typeView {
+        case .home:
+            return 25.0
+        case .gallery :
+            return 14.0
+        }
+       
     }
 
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
         return 16.0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let controller = viewController
         let nft = collectionData[indexPath.row].nft
-        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft, before: .home))
+        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft, view: typeView))
         navigationController.modalPresentationStyle = .custom
         controller!.present(navigationController, animated: true, completion: nil)
        
@@ -163,7 +171,7 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
 extension HomeCollection {
     public func configureView(with data: [CollectionData]) {
         let carouselLayout = UICollectionViewFlowLayout()
-        switch view {
+        switch typeView {
         case .home:
             carouselLayout.scrollDirection = .horizontal
         case .gallery :

@@ -10,7 +10,7 @@ import UIKit
 class InformationNFTViewController: UIViewController {
     
     private var nft: NFT
-    private var screenBefore: ScreenBefore
+    private var typeView: TypeView
     
     private lazy var imageNFT: UIImageView = {
         let imageNFT = UIImageView()
@@ -69,8 +69,8 @@ class InformationNFTViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        switch screenBefore {
-        case .galery:
+        switch typeView {
+        case .gallery:
             backButton = BackButton.makeBackButton(placeholder: "Galery", textColor: UIColor.white)
         case .home:
             backButton = BackButton.makeBackButton(placeholder: "Home", textColor: UIColor.white)
@@ -88,9 +88,9 @@ class InformationNFTViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
-    init(nftSelected: NFT, before: ScreenBefore){
+    init(nftSelected: NFT, view: TypeView){
         self.nft = nftSelected
-        self.screenBefore = before
+        self.typeView = view
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -140,7 +140,7 @@ class InformationNFTViewController: UIViewController {
         }
         
         headerStack.snp.makeConstraints { make in
-            make.top.equalTo(imageNFT.snp.bottom).offset(23)
+            make.top.equalTo(imageNFT.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-15)
             
@@ -163,7 +163,7 @@ class InformationNFTViewController: UIViewController {
         
         if nft.isPositioned{
             localization.snp.makeConstraints { make in
-                make.top.equalTo(descriptionText.snp.bottom).offset(21)
+                make.top.equalTo(descriptionText.snp.bottom).offset(24)
                 make.leading.equalToSuperview().offset(20)
                 make.trailing.equalToSuperview().offset(-20)
                 make.height.equalTo(41)
@@ -174,15 +174,10 @@ class InformationNFTViewController: UIViewController {
             button.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(20)
                 make.trailing.equalToSuperview().offset(-20)
-                make.top.equalTo(descriptionText.snp.bottom).offset(47)
+                make.top.equalTo(descriptionText.snp.bottom).offset(24)
             }
             
         }
         
     }
-}
-
-enum ScreenBefore{
-    case galery
-    case home
 }
