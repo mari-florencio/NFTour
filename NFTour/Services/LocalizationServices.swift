@@ -51,6 +51,17 @@ class LocalizationServices: NSObject,  CLLocationManagerDelegate {
         locations.last
     }
     
+    func isNFTnear(nftCoordinate: CLLocation) -> Bool {
+        
+        let userLocation = getUserLocation()
+        if userLocation.distance(from: nftCoordinate) > 20 {
+            return false
+        } else {
+            return true
+        }
+        
+    }
+    
     
     
 }

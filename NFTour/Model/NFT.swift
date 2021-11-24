@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 struct NFT: Identifiable {
     var id: String
@@ -19,6 +20,7 @@ struct NFT: Identifiable {
     let linkOpenSea: String
     let isPositioned: Bool
     let localization: String?
+    let coordinates: CLLocation
 }
 
 struct ProfileUser {
