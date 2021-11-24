@@ -8,10 +8,14 @@
 import Foundation
 import MapKit
 import CoreLocation
+import SwiftUI
 
 class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
     var userCoordinate = CLLocation()
     var locationManager = CLLocationManager()
+    let profile = Model().profile
+    
+    
     
     lazy var mapView: MKMapView = {
         let view = MKMapView()
@@ -25,8 +29,10 @@ class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
         mapSetup()
         //mapView.setUserTrackingMode(.followWithHeading, animated: true)
         setupView()
+        loadNftsPins()
         
-        let region = MKCoordinateRegion(center: userCoordinate.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
+        
+        let region = MKCoordinateRegion(center: userCoordinate.coordinate, latitudinalMeters: 20000, longitudinalMeters: 20000)
         mapView.region = region
         
 
@@ -61,6 +67,16 @@ class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
         mapView.widthAnchor.constraint(equalTo: widthAnchor),
         mapView.centerXAnchor.constraint(equalTo: centerXAnchor),
         mapView.centerYAnchor.constraint(equalTo: centerYAnchor)])
+    }
+    private func loadNftsPins() {
+        let nftsList = profile.nfts
+        for nft in nftsList {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = nft.coordinates.coordinate
+            
+            print("testando coordenadas \(annotation.coordinate)")
+            mapView.addAnnotation(annotation)
+        }
     }
 }
 

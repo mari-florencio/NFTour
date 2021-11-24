@@ -53,7 +53,7 @@ final class ARServices {
         
         let userCoordinates = localizationServices.getUserLocation()
         
-        print("posicao: \(conversionServices.convertToGeoCoord(arCoodinates: arCoordinates, userCoordinate: userCoordinates, degree: 0))")
+        print("posicao: \(conversionServices.convertToGeoCoord(arCoodinates: arCoordinates, userCoordinate: userCoordinates, degree: localizationServices.getCompassHeading()))")
         
         print("heading: \(localizationServices.getCompassHeading())")
         
