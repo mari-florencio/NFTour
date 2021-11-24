@@ -20,6 +20,8 @@
 		7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068452273E96DC0074133C /* AddressWalletViewController.swift */; };
 		7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A314C59274BCA9300244DEC /* gifLoader.swift */; };
 		7A314C5C274BCB4600244DEC /* gifNFT.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A314C5B274BCB4600244DEC /* gifNFT.gif */; };
+		7A452A3C274D293100823136 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A452A3B274D293100823136 /* BackButton.swift */; };
+		7A452A3E274DE0F700823136 /* NoNFTCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A452A3D274DE0F700823136 /* NoNFTCard.swift */; };
 		7A78693E2741E79F000A9944 /* AlertWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */; };
 		7A78694627420EA8000A9944 /* HomeGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */; };
 		7A78694927420F27000A9944 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78694827420F27000A9944 /* UIView.swift */; };
@@ -64,6 +66,8 @@
 		7A068452273E96DC0074133C /* AddressWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWalletViewController.swift; sourceTree = "<group>"; };
 		7A314C59274BCA9300244DEC /* gifLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifLoader.swift; sourceTree = "<group>"; };
 		7A314C5B274BCB4600244DEC /* gifNFT.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifNFT.gif; sourceTree = "<group>"; };
+		7A452A3B274D293100823136 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		7A452A3D274DE0F700823136 /* NoNFTCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNFTCard.swift; sourceTree = "<group>"; };
 		7A78693D2741E79F000A9944 /* AlertWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWalletViewController.swift; sourceTree = "<group>"; };
 		7A78694527420EA8000A9944 /* HomeGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGalleryViewController.swift; sourceTree = "<group>"; };
 		7A78694827420F27000A9944 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				7A78694C2742F093000A9944 /* SeparatorView.swift */,
 				7A78695027432476000A9944 /* HomeCollection.swift */,
 				7A78695727433046000A9944 /* HomeCollectionViewCell.swift */,
+				7A452A3D274DE0F700823136 /* NoNFTCard.swift */,
 				7AD7E857274597350038B60B /* Controller */,
 			);
 			path = Home;
@@ -275,6 +280,7 @@
 			children = (
 				7AD7E86427467E430038B60B /* PrincipalButton.swift */,
 				7AD7E86627467E4A0038B60B /* IconButton.swift */,
+				7A452A3B274D293100823136 /* BackButton.swift */,
 			);
 			path = "General Components";
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD7E86B27467E7E0038B60B /* AddressTextField.swift in Sources */,
+				7A452A3E274DE0F700823136 /* NoNFTCard.swift in Sources */,
 				7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */,
 				7AD7E850274596470038B60B /* LocalizationNFTView.swift in Sources */,
 				7A78695627432B7E000A9944 /* Model.swift in Sources */,
@@ -462,6 +469,7 @@
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
 				7AD7E885274977DB0038B60B /* TabBarViewController.swift in Sources */,
 				B21158DC27452BF400F97C84 /* LocalizationServices.swift in Sources */,
+				7A452A3C274D293100823136 /* BackButton.swift in Sources */,
 				7AD7E86527467E430038B60B /* PrincipalButton.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
 				7AD7E86F27467F8C0038B60B /* MapViewController.swift in Sources */,
@@ -637,7 +645,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JCA2V9H3D;
+				DEVELOPMENT_TEAM = 6JQBX9UWVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = AR;

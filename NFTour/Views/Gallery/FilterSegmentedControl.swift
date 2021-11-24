@@ -21,8 +21,8 @@ class FilterSegmentedControl: UISegmentedControl {
     
    static func createSegmented() -> FilterSegmentedControl {
         let control = FilterSegmentedControl()
-        control.insertSegment(withTitle: "todas", at: 0, animated: true)
-        control.insertSegment(withTitle: "exibidas", at: 1, animated: true)
+        control.insertSegment(withTitle: "to display", at: 0, animated: true)
+        control.insertSegment(withTitle: "displayed", at: 1, animated: true)
         control.selectedSegmentIndex = 0
         control.layer.cornerRadius = 20
         control.layer.masksToBounds = true

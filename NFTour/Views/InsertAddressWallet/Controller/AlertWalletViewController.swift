@@ -13,7 +13,7 @@ class AlertWalletViewController: UIViewController {
     
     var wallet: WalletConfirm
     let menuView = UIView()
-    let menuHeight = UIScreen.main.bounds.height / 2.5
+    let menuHeight = UIScreen.main.bounds.height / 2.4
     var isPresenting = false
     
     lazy var backdropView: UIView = {
@@ -28,7 +28,14 @@ class AlertWalletViewController: UIViewController {
         let iconImage = UIImageView()
         let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 48, weight: .medium))
         
-        iconImage.image = (wallet == .connected) ? UIImage(systemName: "checkmark.circle", withConfiguration: configuration) : UIImage(systemName: "exclamationmark.circle", withConfiguration: configuration)
+        switch wallet {
+        case .connected:
+            iconImage.image =  UIImage(systemName: "checkmark.circle", withConfiguration: configuration)
+        case .notConnected:
+            iconImage.image =  UIImage(systemName: "exclamationmark.circle", withConfiguration: configuration)
+        case .loading:
+            iconImage.image =  UIImage(systemName: "clock.arrow.circlepath", withConfiguration: configuration)
+        }
         iconImage.tintColor = .white
         
         return iconImage
@@ -36,7 +43,15 @@ class AlertWalletViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
-        title.text = (wallet == .connected) ? "Connected wallet!" : "Try again!"
+        switch wallet {
+        case .connected:
+            title.text = "Connected wallet!"
+        case .notConnected:
+            title.text = "Try again!"
+        case .loading:
+            title.text = "Loading"
+        }
+        
         title.textColor = .white
         title.font = UIFont.systemFont(ofSize: 34, weight: .bold)
         title.textAlignment = .center
@@ -45,7 +60,15 @@ class AlertWalletViewController: UIViewController {
     
     private lazy var subtitle: UILabel = {
         let subtitle = UILabel()
-        subtitle.text = (wallet == .connected) ? "Sua carteira foi encontrada! Estamos puxando suas NFTs para que você comece a colocar elas por aí" : "Não conseguimos conectar com sua carteira da OpenSea. Por favor, tente novamente"
+        
+        switch wallet {
+        case .connected:
+            subtitle.text = "Your wallet has been found! We are getting your NTFs so you can position them around the world"
+        case .notConnected:
+            subtitle.text = "We are unable to connect with your OpenSea wallet. Please try again"
+        case .loading:
+            subtitle.text = ""
+        }
         subtitle.textColor = .white
         subtitle.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         subtitle.textAlignment = .center
@@ -53,6 +76,8 @@ class AlertWalletViewController: UIViewController {
         
         return subtitle
     }()
+    
+    private lazy var buttonGo: PrincipalButton = .createButton(placeholder: "Go to NFTour")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,11 +99,26 @@ class AlertWalletViewController: UIViewController {
     }
     
     private func setupView(){
-        menuView.backgroundColor = (wallet == .connected) ? UIColor(named: "greenSucess") : UIColor(named: "orangeError")
+        switch wallet {
+        case .connected:
+            menuView.backgroundColor = UIColor(named: "greenSucess")
+        case .notConnected:
+            menuView.backgroundColor = UIColor(named: "orangeError")
+        case .loading:
+            menuView.backgroundColor = UIColor(named: "purple")
+        }
+        
         menuView.layer.cornerRadius = 15
         menuView.layer.masksToBounds = true
         
-        buttonClose.addTarget(self, action: #selector(goToCollection(_sender:)), for: .touchUpInside)
+        if wallet == .notConnected  {
+            buttonClose.addTarget(self, action: #selector(dismiss(_sender:)), for: .touchUpInside)
+        }
+        
+        if wallet == .connected  {
+            buttonGo.addTarget(self, action: #selector(goToCollection(_sender:)), for: .touchUpInside)
+        }
+        
     }
     
     private func setupHierarchy() {
@@ -86,11 +126,16 @@ class AlertWalletViewController: UIViewController {
         //addSubview(background)
         view.addSubview(backdropView)
         
-        
-        menuView.addSubview(buttonClose)
+        if wallet == .notConnected  {
+            menuView.addSubview(buttonClose)
+        }
         menuView.addSubview(iconImage)
         menuView.addSubview(titleLabel)
         menuView.addSubview(subtitle)
+        
+        if wallet == .connected  {
+            menuView.addSubview(buttonGo)
+        }
         
         view.addSubview(menuView)
         
@@ -105,23 +150,39 @@ class AlertWalletViewController: UIViewController {
     
     }
     
+    @objc func dismiss (_sender: UIButton!) {
+        self.dismiss(animated: true, completion: nil)
+    
+    }
+    
     private func setupConstraints() {
-        buttonClose.snp.makeConstraints { make in
-            make.top.equalTo(menuView.snp.top).offset(20)
-            make.leading.equalTo(333)
-            make.trailing.equalTo(-24)
-          
-            
+        if wallet == .notConnected  {
+            buttonClose.snp.makeConstraints { make in
+                make.top.equalTo(menuView.snp.top).offset(20)
+                make.leading.equalTo(333)
+                make.trailing.equalTo(-24)
+            }
         }
 
         iconImage.snp.makeConstraints { make in
-            make.top.equalTo(menuView.snp.top).offset(80)
+            if wallet == .connected {
+                make.top.equalTo(menuView.snp.top).offset(35)
+            }else{
+                make.top.equalTo(menuView.snp.top).offset(80)
+                
+            }
             make.centerX.equalToSuperview()
         }
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(iconImage.snp.bottom).offset(22)
+            if wallet == .connected {
+                make.top.equalTo(iconImage.snp.bottom).offset(16)
+            }else{
+                make.top.equalTo(iconImage.snp.bottom).offset(22)
+                
+            }
             make.centerX.equalToSuperview()
+            
         }
 
         subtitle.snp.makeConstraints { make in
@@ -129,6 +190,15 @@ class AlertWalletViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.leading.equalTo(40)
             make.trailing.equalTo(-40)
+        }
+        
+        if wallet == .connected  {
+            buttonGo.snp.makeConstraints { make in
+                make.top.equalTo(subtitle.snp.bottom).offset(24)
+                make.centerX.equalToSuperview()
+                make.leading.equalTo(20)
+                make.trailing.equalTo(-20)
+            }
         }
         
         //TODO : mudar para o formato de snapkit
@@ -143,6 +213,7 @@ class AlertWalletViewController: UIViewController {
     enum WalletConfirm {
         case connected
         case notConnected
+        case loading
     }
 }
 
@@ -205,7 +276,7 @@ class HalfSizePresentationController : UIPresentationController {
                 return CGRect.zero
             }
 
-            return CGRect(x: 0, y: theView.bounds.height/2.5, width: theView.bounds.width, height: theView.bounds.height/2.5)
+            return CGRect(x: 0, y: theView.bounds.height/1.8, width: theView.bounds.width, height: theView.bounds.height/1.8)
         }
     }
 }
