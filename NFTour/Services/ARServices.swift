@@ -77,25 +77,25 @@ final class ARServices {
         let positionVector = conversionServices.convertoToARCoordinates(userCoordinate: localizationServices.getUserLocation(), coord2: coordinates, coord2Altitude: 904, degrees:localizationServices.getCompassHeading())
         
         print("vector: \(positionVector)")
-        node.position = positionVector
+        
         
         // MARK: - Asset Placement
-//        let billboardConstraints = SCNBillboardConstraint()
-//        billboardConstraints.freeAxes = SCNBillboardAxis.Y
-//        node.constraints = [billboardConstraints]
-//
-//        guard let currentFrame = arView.session.currentFrame else {
-//            fatalError("currentFrame not work")
-//        }
-//
-//        var translation = matrix_identity_float4x4
-//        translation.columns.3.z = -1
-//
-//        let transform = currentFrame.camera.transform
-//        let sceneTransform = matrix_multiply(transform, translation)
-//
-//        node.transform = SCNMatrix4(sceneTransform)
-        
+        let billboardConstraints = SCNBillboardConstraint()
+        billboardConstraints.freeAxes = SCNBillboardAxis.Y
+        node.constraints = [billboardConstraints]
+
+        guard let currentFrame = arView.session.currentFrame else {
+            fatalError("currentFrame not work")
+        }
+
+        var translation = matrix_identity_float4x4
+        translation.columns.3.z = -1
+
+        let transform = currentFrame.camera.transform
+        let sceneTransform = matrix_multiply(transform, translation)
+
+        node.transform = SCNMatrix4(sceneTransform)
+        node.position = positionVector
         print("heading 2: \(localizationServices.getCompassHeading())")
         // MARK: - Add image to node
         node.geometry?.firstMaterial?.diffuse.contents = asset
