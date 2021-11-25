@@ -130,7 +130,6 @@ class ARViewController: UIViewController {
     }
     
     func saveLocation() {
-        //salvar posiçao no realm
         //print("aqui: \(coordinates)")
         LocalDataService().saveNFTLocation(id: idNFT, latitude: coordinates[0], longitude: coordinates[1])
         displayConfirmation()
