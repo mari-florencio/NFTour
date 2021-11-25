@@ -120,7 +120,7 @@ class ARViewController: UIViewController {
             positionLabel.removeFromSuperview()
             state = .placed
             
-            coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft1")!)
+            coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft2")!)
             displayModal()
         } else {
             self.presentingViewController?.dismiss(animated: false, completion: nil)

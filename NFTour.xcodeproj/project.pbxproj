@@ -53,6 +53,7 @@
 		B213FA64274D0C3700BE76DA /* TabBarFakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213FA63274D0C3700BE76DA /* TabBarFakeViewController.swift */; };
 		B252BE16274E89B700B8101F /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252BE14274E89B700B8101F /* ARView.swift */; };
 		B252BE17274E89B700B8101F /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252BE15274E89B700B8101F /* ARViewController.swift */; };
+		B267DE0B274FBEA00090F10F /* ExploreScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267DE0A274FBEA00090F10F /* ExploreScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		B213FA63274D0C3700BE76DA /* TabBarFakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFakeViewController.swift; sourceTree = "<group>"; };
 		B252BE14274E89B700B8101F /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		B252BE15274E89B700B8101F /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		B267DE0A274FBEA00090F10F /* ExploreScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreScreenViewController.swift; sourceTree = "<group>"; };
 		B58109AEEF28BF999C4D1155 /* Pods_NFTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7863695E147918980F0F06F /* Pods-NFTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFTour.debug.xcconfig"; path = "Target Support Files/Pods-NFTour/Pods-NFTour.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 		4B10C52E274BD631008AD9BC /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				B267DE09274FBE6A0090F10F /* ExploreScreen */,
 				B252BE14274E89B700B8101F /* ARView.swift */,
 				B252BE15274E89B700B8101F /* ARViewController.swift */,
 				4B06F4AD274E69CF00D1896D /* ConfirmationModalViewController.swift */,
@@ -342,6 +345,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B267DE09274FBE6A0090F10F /* ExploreScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B267DE0A274FBEA00090F10F /* ExploreScreenViewController.swift */,
+			);
+			path = ExploreScreen;
+			sourceTree = "<group>";
+		};
 		B2E298802747347A00D43F02 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +512,7 @@
 				4B6043672746A7D8000B618E /* ARServices.swift in Sources */,
 				B213FA5A27482B1000BE76DA /* MapScreenCollectionView.swift in Sources */,
 				7AD7E84E274549C80038B60B /* UITextView.swift in Sources */,
+				B267DE0B274FBEA00090F10F /* ExploreScreenViewController.swift in Sources */,
 				B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */,
 				B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */,
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
