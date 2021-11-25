@@ -82,6 +82,15 @@ final class ConversionServices {
         return [latitude, longitude]
     }
     
+    func convertDoubleToCLLocation(vector: [Double]) -> CLLocation {
+        if vector.count != 2 {
+            fatalError("vetor invalido no convertDoubleToCLLocation")
+        }
+        let latitude: Double = vector[0]
+        let longitude: Double = vector[1]
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
 }
 
 
