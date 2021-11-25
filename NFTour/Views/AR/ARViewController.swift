@@ -24,7 +24,7 @@ class ARViewController: UIViewController {
     private lazy var positionLabel: UILabel = {
         let label = UILabel()
         label.text = "Tap the screen to place"
-        label.textColor = UIColor(named: "textColor")
+        label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -46,7 +46,7 @@ class ARViewController: UIViewController {
     private lazy var confirmationLabel: UILabel = {
         let label = UILabel()
         label.text = "NFT placed!"
-        label.textColor = UIColor(named: "textColor")
+        label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .center

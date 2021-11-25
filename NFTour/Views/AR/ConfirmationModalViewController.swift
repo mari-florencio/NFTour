@@ -32,7 +32,7 @@ class ConfirmationModalViewController: UIViewController {
         let configuration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20, weight: .medium))
 
         button.setImage(UIImage(systemName: "xmark", withConfiguration: configuration), for: .normal)
-        button.tintColor = UIColor.white
+        button.tintColor = UIColor(named: "backgroundButton")
 
         return button
     }()
@@ -57,7 +57,7 @@ class ConfirmationModalViewController: UIViewController {
         transitioningDelegate = self
         menuView.layer.cornerRadius = 15
         menuView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        menuView.backgroundColor = .black
+        menuView.backgroundColor = UIColor(named: "backgroundColor")
         
         closeButton.addTarget(self, action: #selector(pressed(_sender:)), for: .touchUpInside)
         confirmButton.addTarget(self, action: #selector(pressed(_sender:)), for: .touchUpInside)
