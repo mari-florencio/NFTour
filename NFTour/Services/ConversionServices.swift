@@ -77,9 +77,18 @@ final class ConversionServices {
     }
     
     func convertCLLocationToDouble(coordinates: CLLocation) -> [Double] {
-        let latitude = coordinates.coordinate.latitude.magnitude
-        let longitude = coordinates.coordinate.longitude.magnitude
+        let latitude = coordinates.coordinate.latitude
+        let longitude = coordinates.coordinate.longitude
         return [latitude, longitude]
+    }
+    
+    func convertDoubleToCLLocation(vector: [Double]) -> CLLocation {
+        if vector.count != 2 {
+            fatalError("vetor invalido no convertDoubleToCLLocation")
+        }
+        let latitude: Double = vector[0]
+        let longitude: Double = vector[1]
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
     
 }

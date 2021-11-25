@@ -13,7 +13,7 @@ final class ARServices {
     let localizationServices = LocalizationServices()
     let conversionServices = ConversionServices()
     
-    func placeAsset(arView: ARSCNView, asset: UIImage) {
+    func placeAsset(arView: ARSCNView, asset: UIImage) -> [Double]{
         
         // MARK: - Image scale
         let width: CGFloat = 0.3
@@ -29,7 +29,7 @@ final class ARServices {
         billboardConstraints.freeAxes = SCNBillboardAxis.Y
         node.constraints = [billboardConstraints]
         
-        guard let currentFrame = arView.session.currentFrame else { return }
+        guard let currentFrame = arView.session.currentFrame else { return [] }
         
         var translation = matrix_identity_float4x4
         translation.columns.3.z = -1
@@ -53,9 +53,15 @@ final class ARServices {
         
         let userCoordinates = localizationServices.getUserLocation()
         
-        print("posicao: \(conversionServices.convertToGeoCoord(arCoodinates: arCoordinates, userCoordinate: userCoordinates, degree: localizationServices.getCompassHeading()))")
+        let geoCoordinates = conversionServices.convertToGeoCoord(arCoodinates: arCoordinates, userCoordinate: userCoordinates, degree: localizationServices.getCompassHeading())
         
-        print("heading: \(localizationServices.getCompassHeading())")
+        let coordinates = conversionServices.convertCLLocationToDouble(coordinates: geoCoordinates)
+        
+        return coordinates
+        
+//        print("posicao: \(conversionServices.convertToGeoCoord(arCoodinates: arCoordinates, userCoordinate: userCoordinates, degree: localizationServices.getCompassHeading()))")
+        
+        //print("heading: \(localizationServices.getCompassHeading())")
         
     }
     

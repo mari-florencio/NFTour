@@ -18,11 +18,13 @@ class ARViewController: UIViewController {
     var arView = ARView()
     let arServices = ARServices()
     public var state: ARState = .notPlaced
+    public var coordinates: [Double]!
+    public var idNFT: String = "StringTeste"
     
     private lazy var positionLabel: UILabel = {
         let label = UILabel()
         label.text = "Tap the screen to place"
-        label.textColor = UIColor(named: "textColor")
+        label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -44,7 +46,7 @@ class ARViewController: UIViewController {
     private lazy var confirmationLabel: UILabel = {
         let label = UILabel()
         label.text = "NFT placed!"
-        label.textColor = UIColor(named: "textColor")
+        label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -118,7 +120,7 @@ class ARViewController: UIViewController {
             positionLabel.removeFromSuperview()
             state = .placed
             
-            arServices.placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft1")!)
+            coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft1")!)
             displayModal()
         } else {
             self.presentingViewController?.dismiss(animated: false, completion: nil)
@@ -137,7 +139,8 @@ class ARViewController: UIViewController {
     }
     
     func saveLocation() {
-        //salvar posiçao no realm
+        //print("aqui: \(coordinates)")
+        LocalDataService().saveNFTLocation(id: idNFT, latitude: coordinates[0], longitude: coordinates[1])
         displayConfirmation()
     }
 }
