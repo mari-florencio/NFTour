@@ -124,7 +124,7 @@ class TabBarFakeViewController: UIViewController {
     }
     
     @objc func cameraButtonPressed(_sender: UIButton!) {
-        let newViewController = ARViewController()
+        let newViewController = ExploreScreenViewController()
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
         self.present(navigationController, animated: true, completion: nil)

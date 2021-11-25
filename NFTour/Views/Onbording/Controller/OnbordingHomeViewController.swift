@@ -116,6 +116,7 @@ class OnbordingHomeViewController: UIViewController, CLLocationManagerDelegate  
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.allowsBackgroundLocationUpdates
     }
 
 }
