@@ -48,7 +48,9 @@ class MapScreenCollectionView: UIViewController {
         
         //colllection
         for nft in profile.nfts {
-            collectionData.append(.init(nft: nft))
+            if nft.isPositioned{
+                collectionData.append(.init(nft: nft))
+            }
         }
     }
     

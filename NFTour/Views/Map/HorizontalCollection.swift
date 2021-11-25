@@ -85,7 +85,7 @@ extension HorizontalCollection: UICollectionViewDataSource,  UICollectionViewDel
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Model().profile.nfts.count
+        return collectionData.count
     }
     
     
