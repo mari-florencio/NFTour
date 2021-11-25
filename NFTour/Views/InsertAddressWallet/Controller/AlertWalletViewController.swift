@@ -136,9 +136,7 @@ class AlertWalletViewController: UIViewController {
         if wallet == .connected  {
             menuView.addSubview(buttonGo)
         }
-        
         view.addSubview(menuView)
-        
     }
     
     @objc func goToCollection (_sender: UIButton!) {
