@@ -93,7 +93,7 @@ extension AddressWalletViewController: UITextFieldDelegate {
     
     @objc func textFieldEditingDidChange(_ sender: UITextField){
         buttonConnect.isEnabled = true
-        buttonConnect.setTitleColor(UIColor.white, for: .normal)
+        buttonConnect.setTitleColor(UIColor(named: "textColorButton"), for: .normal)
         buttonConnect.backgroundColor = UIColor(named: "backgroundButton")
         
     }

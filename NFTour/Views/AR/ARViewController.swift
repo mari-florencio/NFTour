@@ -54,8 +54,10 @@ class ARViewController: UIViewController {
         
         return label
     }()
+  
+    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Voltar", textColor: UIColor.white)
     
-
+    
     override func loadView() {
         view = arView
     }
@@ -66,6 +68,9 @@ class ARViewController: UIViewController {
         view.addGestureRecognizer(tap)
         
         displayPosition()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftItemsSupplementBackButton = true
     }
     
     func displayPosition() {
@@ -119,6 +124,10 @@ class ARViewController: UIViewController {
             self.presentingViewController?.dismiss(animated: false, completion: nil)
         }
         
+    }
+    
+    @objc func goBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func clearARView() {

@@ -24,7 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }()
     private var profile: ProfileUser = Model().profile
     private var collectionData = [HomeCollection.CollectionData]()
-    private lazy var backButton: BackButton = .init()
+    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Voltar", textColor: UIColor(named: "textColor")!)
     
     
     override func viewDidLoad() {
@@ -34,6 +34,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         for nft in profile.nfts {
             collectionData.append(.init(nft: nft))
         }
+        
+        // configura o botao esquerdo da navegation bar
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftItemsSupplementBackButton = true
+        
+        
         setupMapView()
 //        secondView.configureView(with: collectionData)
 //        secondView.takeViewController(view: self)
@@ -65,6 +72,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
         annotationView.markerTintColor = UIColor.blue
         return annotationView
+    }
+    
+    @objc func goBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

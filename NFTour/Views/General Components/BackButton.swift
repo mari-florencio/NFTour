@@ -26,6 +26,7 @@ class BackButton: UIButton {
         button.tintColor = textColor
         button.setTitle("  \(placeholder)", for: .normal)
         button.setTitleColor(textColor, for: .normal)
+        button.setTitleColor(textColor, for: .selected)
     
         return button
     }
