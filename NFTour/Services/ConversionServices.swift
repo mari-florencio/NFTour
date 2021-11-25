@@ -77,8 +77,8 @@ final class ConversionServices {
     }
     
     func convertCLLocationToDouble(coordinates: CLLocation) -> [Double] {
-        let latitude = coordinates.coordinate.latitude.magnitude
-        let longitude = coordinates.coordinate.longitude.magnitude
+        let latitude = coordinates.coordinate.latitude
+        let longitude = coordinates.coordinate.longitude
         return [latitude, longitude]
     }
     
