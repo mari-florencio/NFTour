@@ -50,6 +50,6 @@ class LocalDataService {
     }
     
     public func printRealmPath() {
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print("realm url:\(Realm.Configuration.defaultConfiguration.fileURL!)")
     }
 }

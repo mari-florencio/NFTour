@@ -14,6 +14,7 @@ class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
     var userCoordinate = CLLocation()
     var locationManager = CLLocationManager()
     let profile = Model().profile
+    let profileAda = Model().adaNFTsProfile
     
     
     
@@ -70,6 +71,7 @@ class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
     }
     private func loadNftsPins() {
         let nftsList = profile.nfts
+        let nftsAdaList = profileAda.nfts
         for nft in nftsList {
             let annotation = MKPointAnnotation()
             annotation.coordinate = nft.coordinates.coordinate
@@ -77,6 +79,16 @@ class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
             print("testando coordenadas \(annotation.coordinate)")
             mapView.addAnnotation(annotation)
         }
+        
+        for nft in nftsAdaList {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = nft.coordinates.coordinate
+            
+            print("testando coordenadas \(annotation.coordinate)")
+            mapView.addAnnotation(annotation)
+        }
+        
+        
     }
 }
 

@@ -13,6 +13,7 @@ class ExploreScreenViewController: UIViewController {
     var arView = ARView()
     let arServices = ARServices()
     let profile = Model().profile
+    let profileAda = Model().adaNFTsProfile
     let localizationServices = LocalizationServices()
    
     private lazy var backButton: BackButton = .makeBackButton(placeholder: "Voltar", textColor: UIColor.white)
@@ -80,10 +81,19 @@ class ExploreScreenViewController: UIViewController {
     
     func loadNFTs(){
         let nftList = profile.nfts
+        let nftAdaList = profileAda.nfts
         for nft in nftList {
             
             if localizationServices.isNFTnear(nftCoordinate: nft.coordinates) {
-                arServices.placeAssetByGeoCoordinates(arView: arView.arSceneView, asset: UIImage(imageLiteralResourceName: nft.image), coordinates: nft.coordinates)
+                arServices.placeAssetByGeoCoordinates(arView: arView.arSceneView, asset: UIImage( imageLiteralResourceName: nft.image), coordinates: nft.coordinates)
+            } else {
+                print("vector: nft longe")
+            }
+        }
+        for nft in nftAdaList {
+            
+            if localizationServices.isNFTnear(nftCoordinate: nft.coordinates) {
+                arServices.placeAssetByGeoCoordinates(arView: arView.arSceneView, asset: UIImage( imageLiteralResourceName: nft.image), coordinates: nft.coordinates)
             } else {
                 print("vector: nft longe")
             }

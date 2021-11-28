@@ -141,6 +141,7 @@ class ARViewController: UIViewController {
     
     func saveLocation() {
         //print("aqui: \(coordinates)")
+        LocalDataService().printRealmPath()
         LocalDataService().saveNFTLocation(id: idNFT, latitude: coordinates[0], longitude: coordinates[1])
         displayConfirmation()
     }
