@@ -11,6 +11,7 @@ class HomeCollection: UIView, UICollectionViewDelegate {
 
     private var viewController: UIViewController?
     private var typeView: TypeView
+    private let viewModel = HomeCollectionViewModel()
     
     struct CollectionData {
         let nft: NFT
@@ -31,13 +32,14 @@ class HomeCollection: UIView, UICollectionViewDelegate {
     // MARK: - Properties
 
     private var collectionData = [CollectionData]()
+    private var openseaNfts = DefaultOpenSeaRepository.shared.openseaNfts
 
     init(typeView: TypeView) {
         self.typeView = typeView
         super.init(frame: .zero)
         setupUI()
     }
-
+    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -78,8 +80,6 @@ private extension HomeCollection {
             make.trailing.equalToSuperview()
             make.height.equalTo(LayoutMetrics.heightCarosel)
         }
-        
-
     }
 }
 
@@ -93,9 +93,9 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch typeView {
         case .home:
-            return 4
+            return min(4, openseaNfts.count)
         case .gallery :
-            return collectionData.count
+            return openseaNfts.count
         }
     }
 
@@ -104,7 +104,8 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.cellId, for: indexPath) as? HomeCollectionViewCell
         else { return UICollectionViewCell() }
 
-        let nft = collectionData[indexPath.row].nft
+//        let nft = collectionData[indexPath.row].nft
+        let nft = openseaNfts[indexPath.row]
 
         cell.configure(nft: nft)
 
@@ -152,16 +153,22 @@ extension HomeCollection: UICollectionViewDataSource, UICollectionViewDelegateFl
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         return 16.0
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let controller = viewController
-        let nft = collectionData[indexPath.row].nft
-        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft, view: typeView))
-        navigationController.modalPresentationStyle = .custom
-        controller!.present(navigationController, animated: true, completion: nil)
+        let nft = openseaNfts[indexPath.row]
+        DefaultOpenSeaRepository.shared.fetchNFTDetail(assetContractAddress: nft.assetContract.address, tokenId: nft.tokenId) { nftDetail in
+            print("nft detail: \(nftDetail)")
+            if let nftDetail = nftDetail {
+                let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nftDetail, view: .gallery))
+                navigationController.modalPresentationStyle = .custom
+                controller!.present(navigationController, animated: true, completion: nil)
+            } else {
+                print("deu erro parceiro")
+            }
+        }
        
     }
 }

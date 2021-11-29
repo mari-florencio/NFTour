@@ -21,7 +21,7 @@ class AddressWalletViewController: UIViewController{
     }()
     
     private lazy var insertWalletTextField: AddressTextField = {
-        .init(placeholder: "Anddress")
+        .init(placeholder: "Address")
     }()
     
     private lazy var buttonConnect: PrincipalButton =  .createButtonDisable(placeholder: "Connect")
@@ -51,11 +51,29 @@ class AddressWalletViewController: UIViewController{
         
         LocalDataService().createUser()
         LocalDataService().editUserWallet(wallet: insertWalletTextField.text!)
-        
-        let newViewController = AlertWalletViewController(wallet: .connected)
-        let navigationController = UINavigationController(rootViewController: newViewController)
+        var newViewController = AlertWalletViewController(wallet: .loading)
+        var navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
         present(navigationController, animated: true, completion: nil)
+        
+        DefaultOpenSeaRepository.shared.fetchNFTs(ownerId: insertWalletTextField.text!) { nfts in
+            if let nfts = nfts {
+                navigationController.dismiss(animated: true) {
+                    newViewController = AlertWalletViewController(wallet: .connected)
+                    navigationController = UINavigationController(rootViewController: newViewController)
+                    navigationController.modalPresentationStyle = .custom
+                    self.present(navigationController, animated: true, completion: nil)
+                }
+            } else {
+                navigationController.dismiss(animated: true) {
+                    newViewController = AlertWalletViewController(wallet: .notConnected)
+                    navigationController = UINavigationController(rootViewController: newViewController)
+                    navigationController.modalPresentationStyle = .custom
+                    self.present(navigationController, animated: true, completion: nil)
+                }
+            }
+            print(nfts)
+        }
     }
     
     private func setupHierarchy() {

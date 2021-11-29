@@ -7,12 +7,13 @@
 
 import UIKit
 import CoreLocation
+import Kingfisher
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
     
     private lazy var nftImage = UIImageView()
-    private var nftSelected: NFT
+    private var nftSelected: OpenSeaNFT?
     
 
 
@@ -23,13 +24,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
     // MARK: - Initializer
 
     override init(frame: CGRect) {
-        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "", coordinates: CLLocation(latitude: 0, longitude: 0))
         super.init(frame: frame)
         setupUI()
     }
 
     required init?(coder: NSCoder) {
-        nftSelected = NFT(id: UUID().uuidString, image: "", name: "", price: 0 , properties: "", description: "", creator: "", linkOpenSea: "", isPositioned: false, localization: "", coordinates: CLLocation(latitude: 0, longitude: 0))
         super.init(coder: coder)
         setupUI()
     }
@@ -56,13 +55,9 @@ private extension HomeCollectionViewCell {
 // MARK: - Public
 
 extension HomeCollectionViewCell {
-    public func configure(nft: NFT) {
-        nftImage.image = UIImage(named: nft.image)
+    public func configure(nft: OpenSeaNFT) {
+        self.nftSelected = nft
+        let url = URL(string: nft.imageUrl)
+        nftImage.kf.setImage(with: url)
     }
-    
-    public func identifyNFT(nft: NFT){
-        nftSelected = nft
-    }
-
-
 }

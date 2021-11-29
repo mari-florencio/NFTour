@@ -7,6 +7,7 @@
 
 import UIKit
 import ARKit
+import Kingfisher
 
 enum ARState {
     case notPlaced
@@ -15,6 +16,7 @@ enum ARState {
 
 class ARViewController: UIViewController {
     
+    var imageUrl: String = ""
     var arView = ARView()
     let arServices = ARServices()
     public var state: ARState = .notPlaced
@@ -119,8 +121,11 @@ class ARViewController: UIViewController {
             positionImage.removeFromSuperview()
             positionLabel.removeFromSuperview()
             state = .placed
+            var imageView = UIImageView()
+            let url = URL(string: imageUrl)
+            imageView.kf.setImage(with: url)
             
-            coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft1")!)
+            coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: imageView.image!)
             displayModal()
         } else {
             self.presentingViewController?.dismiss(animated: false, completion: nil)

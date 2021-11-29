@@ -32,6 +32,7 @@ class HorizontalCollection: UIView {
     // MARK: - Properties
 
     private var collectionData = [CollectionData]()
+    private var openseaNfts = DefaultOpenSeaRepository.shared.openseaNfts
 
     init() {
         super.init(frame: .zero)
@@ -85,7 +86,7 @@ extension HorizontalCollection: UICollectionViewDataSource,  UICollectionViewDel
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Model().profile.nfts.count
+        return openseaNfts.count
     }
     
     
@@ -96,7 +97,7 @@ extension HorizontalCollection: UICollectionViewDataSource,  UICollectionViewDel
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.cellId, for: indexPath) as? HomeCollectionViewCell
         else { return UICollectionViewCell() }
 
-        let nft = collectionData[indexPath.row].nft
+        let nft = openseaNfts[indexPath.row]
 
         cell.configure(nft: nft)
 
@@ -119,10 +120,19 @@ extension HorizontalCollection: UICollectionViewDataSource,  UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let controller = viewController
-        let nft = collectionData[indexPath.row].nft
-        let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nft, view: .gallery))
-        navigationController.modalPresentationStyle = .custom
-        controller!.present(navigationController, animated: true, completion: nil)
+        let nft = openseaNfts[indexPath.row]
+        DefaultOpenSeaRepository.shared.fetchNFTDetail(assetContractAddress: nft.assetContract.address, tokenId: nft.tokenId) { nftDetail in
+            print("nft detail: \(nftDetail)")
+            if let nftDetail = nftDetail {
+                let navigationController = UINavigationController(rootViewController:InformationNFTViewController(nftSelected: nftDetail, view: .gallery))
+                navigationController.modalPresentationStyle = .custom
+                controller!.present(navigationController, animated: true, completion: nil)
+            } else {
+                print("deu erro parceiro")
+            }
+        }
+        
+        
        
     }
 }

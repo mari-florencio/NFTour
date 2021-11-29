@@ -15,13 +15,16 @@ class HomeGalleryViewController: UIViewController, CLLocationManagerDelegate {
     
     private var collectionView: HomeCollection = .init(typeView: .home)
     private var collectionData = [HomeCollection.CollectionData]()
+    private var openseaNfts = DefaultOpenSeaRepository.shared.openseaNfts
     
     private let buttonShowMore = IconButton.createButtonShowMore(size: 20, weight: .bold)
     
     private lazy var stackProfile: UIStackView = {
         let image = UIImageView()
         image.frame = CGRect(x: 0, y: 0, width: 58, height: 58)
-        image.image = profile.picture
+        let url = URL(string: (openseaNfts.first?.owner.profileImgUrl)!)
+        image.kf.setImage(with: url)
+//        image.image = profile.picture
         image.makeRounded()
         image.contentMode = .scaleAspectFill
         
@@ -30,11 +33,11 @@ class HomeGalleryViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         let name = UILabel()
-        name.text = profile.user
+        name.text = openseaNfts.first?.owner.user.username
         name.textColor = UIColor(named: "textColor")
         name.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         
-        let rectangle = AddressWalletRectangle(address: profile.wallet)
+        let rectangle = AddressWalletRectangle(address: (openseaNfts.first?.owner.address)!)
                 
         let stack = UIStackView(arrangedSubviews: [name, rectangle])
         stack.axis = .vertical
