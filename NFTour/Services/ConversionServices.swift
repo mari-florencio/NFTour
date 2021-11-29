@@ -36,7 +36,7 @@ final class ConversionServices {
         var zCoord = -longMeters * sin(radian) + latMeters * cos(radian)
             zCoord = -zCoord
         
-        let yCoord  = coord2Altitude - userCoordinate.altitude
+        let yCoord  = 0.0// coord2Altitude - userCoordinate.altitude
         
         // MARK: - coloca coordenadas em SCNVector3
         let vector = SCNVector3(xCoord, yCoord, zCoord)
@@ -45,7 +45,7 @@ final class ConversionServices {
         print(" altidude  \(userCoordinate.altitude)")
         print("latmeters: \(latMeters)  longmeters: \(longMeters)")
         print("distance in meters \(distanceInMeters)")
-        print("aqui oo \(latitude)")
+        
         
         return vector
     }
@@ -80,6 +80,15 @@ final class ConversionServices {
         let latitude = coordinates.coordinate.latitude
         let longitude = coordinates.coordinate.longitude
         return [latitude, longitude]
+    }
+    
+    func convertDoubleToCLLocation(vector: [Double]) -> CLLocation {
+        if vector.count != 2 {
+            fatalError("vetor invalido no convertDoubleToCLLocation")
+        }
+        let latitude: Double = vector[0]
+        let longitude: Double = vector[1]
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
     
 }

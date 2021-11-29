@@ -73,6 +73,7 @@ class ARViewController: UIViewController {
         
         displayPosition()
         
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         self.navigationItem.leftItemsSupplementBackButton = true
     }
