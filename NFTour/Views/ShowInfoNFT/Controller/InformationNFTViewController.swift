@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class InformationNFTViewController: UIViewController {
     
-    private var nft: NFT
+    private var nft: OpenSeaNFTDetail
     private var typeView: TypeView
     
     private lazy var imageNFT: UIImageView = {
         let imageNFT = UIImageView()
-        imageNFT.image = UIImage(named: nft.image)
+        let url = URL(string: nft.imageUrl)
+        imageNFT.kf.setImage(with: url)
         imageNFT.contentMode = .scaleToFill
         
         return imageNFT
@@ -25,9 +27,17 @@ class InformationNFTViewController: UIViewController {
         name.text = nft.name
         name.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         name.textColor = UIColor(named: "textColor")
+        var price: Double = Double(nft.lastSale.totalPrice)!
         
+        // MARK: - Dividir o preço por 1 quintilhão :D
+        price = price / 1000000000000000000
+        print("preço formatado por gente normal: \(price)")
         
-        let cardPrice = PriceNFTView.init(price: nft.price)
+//        for n in 1...18 {
+//            price.remove(at: price.last)
+//        }
+        
+        let cardPrice = PriceNFTView.init(price: price)
         
         let headerStack = UIStackView(arrangedSubviews: [name, cardPrice])
         headerStack.axis = .horizontal
@@ -37,9 +47,9 @@ class InformationNFTViewController: UIViewController {
     }()
     
     private lazy var secondStack: UIStackView = {
-        let createBy = InfoCardNFTView.init(infoNFT: nft.creator, typeInfo: .created)
+        let createBy = InfoCardNFTView.init(infoNFT: nft.creator.user.username ?? "Unknown", typeInfo: .created)
         
-        let link = InfoCardNFTView.init(infoNFT: nft.linkOpenSea, typeInfo: .linkOpenSea)
+        let link = InfoCardNFTView.init(infoNFT: nft.permalink, typeInfo: .linkOpenSea)
         
         let stack = UIStackView(arrangedSubviews: [createBy,link])
         stack.axis = .horizontal
@@ -60,7 +70,7 @@ class InformationNFTViewController: UIViewController {
         return description
     }()
     
-    private lazy var localization : LocalizationNFTView = .init(localization: nft.localization!)
+//    private lazy var localization : LocalizationNFTView = .init(localization: nft.localization!)
     
     private lazy var button: PrincipalButton = PrincipalButton.createButton(placeholder: "Place NFT")
     
@@ -88,7 +98,7 @@ class InformationNFTViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
-    init(nftSelected: NFT, view: TypeView){
+    init(nftSelected: OpenSeaNFTDetail, view: TypeView){
         self.nft = nftSelected
         self.typeView = view
         super.init(nibName: nil, bundle: nil)
@@ -104,6 +114,7 @@ class InformationNFTViewController: UIViewController {
     
     @objc func pressed(_sender: UIButton!) {
         let newViewController = ARViewController()
+        newViewController.nftId = nft.tokenId
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
         self.present(navigationController, animated: true, completion: nil)
@@ -122,11 +133,11 @@ class InformationNFTViewController: UIViewController {
         view.addSubview(secondStack)
         view.addSubview(descriptionText)
         
-        if nft.isPositioned{
-            view.addSubview(localization)
-        }else{
+//        if nft.isPositioned{
+//            view.addSubview(localization)
+//        }else{
             view.addSubview(button)
-        }
+//        }
     }
     
     private func setupConstraints() {
@@ -161,23 +172,23 @@ class InformationNFTViewController: UIViewController {
             
         }
         
-        if nft.isPositioned{
-            localization.snp.makeConstraints { make in
-                make.top.equalTo(descriptionText.snp.bottom).offset(24)
-                make.leading.equalToSuperview().offset(20)
-                make.trailing.equalToSuperview().offset(-20)
-                make.height.equalTo(41)
-                
-            }
-        }
-        else{
+//        if nft.isPositioned{
+//            localization.snp.makeConstraints { make in
+//                make.top.equalTo(descriptionText.snp.bottom).offset(24)
+//                make.leading.equalToSuperview().offset(20)
+//                make.trailing.equalToSuperview().offset(-20)
+//                make.height.equalTo(41)
+//
+//            }
+//        }
+//        else{
             button.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(20)
                 make.trailing.equalToSuperview().offset(-20)
                 make.top.equalTo(descriptionText.snp.bottom).offset(24)
             }
             
-        }
+//        }
         
     }
 }

@@ -24,7 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }()
     private var profile: ProfileUser = Model().profile
     private var collectionData = [HomeCollection.CollectionData]()
-    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Voltar", textColor: UIColor(named: "textColor")!)
+    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Back", textColor: UIColor(named: "textColor")!)
     
     
     override func viewDidLoad() {

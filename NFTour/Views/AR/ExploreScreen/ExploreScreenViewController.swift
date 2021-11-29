@@ -15,7 +15,7 @@ class ExploreScreenViewController: UIViewController {
     let profile = Model().profile
     let localizationServices = LocalizationServices()
    
-    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Voltar", textColor: UIColor.white)
+    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Back", textColor: UIColor.white)
     
     private var placeNFTButton = UIButton(frame: CGRect(x: 0, y: 0, width: 73, height: 73))
     

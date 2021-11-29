@@ -16,7 +16,7 @@ class MapScreenCollectionView: UIViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "NFTs exibidas"
+        label.text = "Positioned NFTs"
         label.textColor = UIColor(named: "textColor")
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 20, weight:  .bold)

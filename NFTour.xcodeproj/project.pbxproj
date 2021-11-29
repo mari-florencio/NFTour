@@ -18,6 +18,14 @@
 		548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D1C1B273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift */; };
 		548D1C21273BEA2E00E0E4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */; };
 		548D1C24273BEA2E00E0E4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548D1C22273BEA2E00E0E4D2 /* LaunchScreen.storyboard */; };
+		6E8418C0274FC0E700A5CAA4 /* HomeCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418BF274FC0E700A5CAA4 /* HomeCollectionViewModel.swift */; };
+		6E8418C3275056D100A5CAA4 /* OpenSeaEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418C2275056D100A5CAA4 /* OpenSeaEndpoints.swift */; };
+		6E8418C527505A9100A5CAA4 /* OpenSeaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418C427505A9100A5CAA4 /* OpenSeaService.swift */; };
+		6E8418C727505AC700A5CAA4 /* OpenSeaNFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418C627505AC700A5CAA4 /* OpenSeaNFT.swift */; };
+		6E8418C927505B6400A5CAA4 /* OpenSeaNFTDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418C827505B6400A5CAA4 /* OpenSeaNFTDetail.swift */; };
+		6E8418CC27505FA500A5CAA4 /* OpenSeaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418CB27505FA500A5CAA4 /* OpenSeaRepository.swift */; };
+		6E8418D12750609D00A5CAA4 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418D02750609D00A5CAA4 /* Cache.swift */; };
+		6E8418D3275060C300A5CAA4 /* CachedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8418D2275060C300A5CAA4 /* CachedUnit.swift */; };
 		7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A068452273E96DC0074133C /* AddressWalletViewController.swift */; };
 		7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A314C59274BCA9300244DEC /* gifLoader.swift */; };
 		7A314C5C274BCB4600244DEC /* gifNFT.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A314C5B274BCB4600244DEC /* gifNFT.gif */; };
@@ -70,6 +78,14 @@
 		548D1C20273BEA2E00E0E4D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		548D1C23273BEA2E00E0E4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		548D1C25273BEA2E00E0E4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E8418BF274FC0E700A5CAA4 /* HomeCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewModel.swift; sourceTree = "<group>"; };
+		6E8418C2275056D100A5CAA4 /* OpenSeaEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaEndpoints.swift; sourceTree = "<group>"; };
+		6E8418C427505A9100A5CAA4 /* OpenSeaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaService.swift; sourceTree = "<group>"; };
+		6E8418C627505AC700A5CAA4 /* OpenSeaNFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaNFT.swift; sourceTree = "<group>"; };
+		6E8418C827505B6400A5CAA4 /* OpenSeaNFTDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaNFTDetail.swift; sourceTree = "<group>"; };
+		6E8418CB27505FA500A5CAA4 /* OpenSeaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaRepository.swift; sourceTree = "<group>"; };
+		6E8418D02750609D00A5CAA4 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		6E8418D2275060C300A5CAA4 /* CachedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUnit.swift; sourceTree = "<group>"; };
 		7A068452273E96DC0074133C /* AddressWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWalletViewController.swift; sourceTree = "<group>"; };
 		7A314C59274BCA9300244DEC /* gifLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifLoader.swift; sourceTree = "<group>"; };
 		7A314C5B274BCB4600244DEC /* gifNFT.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifNFT.gif; sourceTree = "<group>"; };
@@ -171,6 +187,9 @@
 		548D1C16273BEA2B00E0E4D2 /* NFTour */ = {
 			isa = PBXGroup;
 			children = (
+				6E8418CD2750606F00A5CAA4 /* Cache */,
+				6E8418CA27505F8700A5CAA4 /* Repositories */,
+				6E8418C12750567C00A5CAA4 /* Networking */,
 				B21158DA27452BDC00F97C84 /* Services */,
 				548D1C17273BEA2B00E0E4D2 /* AppDelegate.swift */,
 				548D1C19273BEA2B00E0E4D2 /* SceneDelegate.swift */,
@@ -182,6 +201,39 @@
 				548D1C25273BEA2E00E0E4D2 /* Info.plist */,
 			);
 			path = NFTour;
+			sourceTree = "<group>";
+		};
+		6E8418BE274FC0D700A5CAA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6E8418BF274FC0E700A5CAA4 /* HomeCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6E8418C12750567C00A5CAA4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6E8418C2275056D100A5CAA4 /* OpenSeaEndpoints.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6E8418CA27505F8700A5CAA4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6E8418CB27505FA500A5CAA4 /* OpenSeaRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		6E8418CD2750606F00A5CAA4 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				6E8418D02750609D00A5CAA4 /* Cache.swift */,
+				6E8418D2275060C300A5CAA4 /* CachedUnit.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		7A06844B273C0D550074133C /* Views */ = {
@@ -216,6 +268,8 @@
 				7A7869532743258B000A9944 /* NFT.swift */,
 				7A78695527432B7E000A9944 /* Model.swift */,
 				4BD2DE49274876C1002088D4 /* LocalData.swift */,
+				6E8418C627505AC700A5CAA4 /* OpenSeaNFT.swift */,
+				6E8418C827505B6400A5CAA4 /* OpenSeaNFTDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +287,7 @@
 		7AD7E8522745967B0038B60B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6E8418BE274FC0D700A5CAA4 /* ViewModel */,
 				7AD7E86827467E5B0038B60B /* AddressWalletRectangle.swift */,
 				7A78694C2742F093000A9944 /* SeparatorView.swift */,
 				7A78695027432476000A9944 /* HomeCollection.swift */,
@@ -341,6 +396,7 @@
 				B21158DD2745342400F97C84 /* CalibrationService.swift */,
 				4BD2DE4727487692002088D4 /* LocalDataService.swift */,
 				4BB0EE2E274E8771008A443C /* LocalizationServices.swift */,
+				6E8418C427505A9100A5CAA4 /* OpenSeaService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -485,6 +541,7 @@
 				7A314C5A274BCA9300244DEC /* gifLoader.swift in Sources */,
 				7AD7E850274596470038B60B /* LocalizationNFTView.swift in Sources */,
 				B252BE17274E89B700B8101F /* ARViewController.swift in Sources */,
+				6E8418C527505A9100A5CAA4 /* OpenSeaService.swift in Sources */,
 				7A78695627432B7E000A9944 /* Model.swift in Sources */,
 				548D1C1C273BEA2B00E0E4D2 /* OnbordingHomeViewController.swift in Sources */,
 				7AD7E86D27467F480038B60B /* InformationNFTViewController.swift in Sources */,
@@ -495,6 +552,8 @@
 				4BD2DE4827487692002088D4 /* LocalDataService.swift in Sources */,
 				4BD2DE4A274876C1002088D4 /* LocalData.swift in Sources */,
 				4B06F4AE274E69D000D1896D /* ConfirmationModalViewController.swift in Sources */,
+				6E8418CC27505FA500A5CAA4 /* OpenSeaRepository.swift in Sources */,
+				6E8418C3275056D100A5CAA4 /* OpenSeaEndpoints.swift in Sources */,
 				7A068453273E96DC0074133C /* AddressWalletViewController.swift in Sources */,
 				7AD7E86727467E4A0038B60B /* IconButton.swift in Sources */,
 				7A7869542743258B000A9944 /* NFT.swift in Sources */,
@@ -508,6 +567,7 @@
 				7A78694D2742F093000A9944 /* SeparatorView.swift in Sources */,
 				7A78693E2741E79F000A9944 /* AlertWalletViewController.swift in Sources */,
 				7A78694927420F27000A9944 /* UIView.swift in Sources */,
+				6E8418D3275060C300A5CAA4 /* CachedUnit.swift in Sources */,
 				7A78695127432476000A9944 /* HomeCollection.swift in Sources */,
 				4B6043672746A7D8000B618E /* ARServices.swift in Sources */,
 				B213FA5A27482B1000BE76DA /* MapScreenCollectionView.swift in Sources */,
@@ -516,10 +576,14 @@
 				B21158DE2745342400F97C84 /* CalibrationService.swift in Sources */,
 				B213FA5C274844F900BE76DA /* HorizontalCollection.swift in Sources */,
 				7AD7E85F2745F0890038B60B /* GalleyViewController.swift in Sources */,
+				6E8418C927505B6400A5CAA4 /* OpenSeaNFTDetail.swift in Sources */,
 				7AD7E885274977DB0038B60B /* TabBarViewController.swift in Sources */,
+				6E8418C727505AC700A5CAA4 /* OpenSeaNFT.swift in Sources */,
 				B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */,
 				7A452A3C274D293100823136 /* BackButton.swift in Sources */,
 				B21158DC27452BF400F97C84 /* ConversionServices.swift in Sources */,
+				6E8418D12750609D00A5CAA4 /* Cache.swift in Sources */,
+				6E8418C0274FC0E700A5CAA4 /* HomeCollectionViewModel.swift in Sources */,
 				7AD7E86527467E430038B60B /* PrincipalButton.swift in Sources */,
 				548D1C1A273BEA2B00E0E4D2 /* SceneDelegate.swift in Sources */,
 			);
@@ -663,7 +727,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZA2LHKU7Z;
+				DEVELOPMENT_TEAM = 366CSL8S72;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = AR;
@@ -695,7 +759,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZA2LHKU7Z;
+				DEVELOPMENT_TEAM = 366CSL8S72;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NFTour/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = AR;

@@ -7,6 +7,7 @@
 
 import UIKit
 import ARKit
+import Kingfisher
 
 enum ARState {
     case notPlaced
@@ -15,6 +16,7 @@ enum ARState {
 
 class ARViewController: UIViewController {
     
+    var nftId: String = ""
     var arView = ARView()
     let arServices = ARServices()
     public var state: ARState = .notPlaced
@@ -57,8 +59,8 @@ class ARViewController: UIViewController {
         return label
     }()
   
-    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Voltar", textColor: UIColor.white)
-    
+    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Back", textColor: UIColor.white)
+    private lazy var nft: OpenSeaNFTDetail = DefaultOpenSeaRepository.shared.nftDetailCache.get(withKey: nftId)!
     
     override func loadView() {
         view = arView
@@ -120,8 +122,11 @@ class ARViewController: UIViewController {
             positionImage.removeFromSuperview()
             positionLabel.removeFromSuperview()
             state = .placed
+            var imageView = UIImageView()
+            let url = URL(string: nft.imageUrl)
+            imageView.kf.setImage(with: url)
             
-            coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: UIImage(named: "nft2")!)
+            coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: imageView.image!)
             displayModal()
         } else {
             self.presentingViewController?.dismiss(animated: false, completion: nil)
@@ -141,7 +146,8 @@ class ARViewController: UIViewController {
     
     func saveLocation() {
         //print("aqui: \(coordinates)")
-        LocalDataService().saveNFTLocation(id: idNFT, latitude: coordinates[0], longitude: coordinates[1])
+        LocalDataService().saveNFTLocation(id: nft.tokenId, latitude: coordinates[0], longitude: coordinates[1])
+        print("coordinates: \(coordinates)")
         displayConfirmation()
     }
 }
