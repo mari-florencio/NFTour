@@ -114,7 +114,7 @@ class InformationNFTViewController: UIViewController {
     
     @objc func pressed(_sender: UIButton!) {
         let newViewController = ARViewController()
-        newViewController.imageUrl = nft.imageUrl
+        newViewController.nftId = nft.tokenId
         let navigationController = UINavigationController(rootViewController: newViewController)
         navigationController.modalPresentationStyle = .custom
         self.present(navigationController, animated: true, completion: nil)

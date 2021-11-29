@@ -24,7 +24,7 @@ class InfoCardNFTView: UIView, UITextViewDelegate {
         }
         
         let title = UILabel()
-        title.text = (typeInfo == .created) ? "Criado por" : "OpenSea"
+        title.text = (typeInfo == .created) ? "Created by" : "OpenSea"
         
         
         let stack = UIStackView(arrangedSubviews: [icon, title])
@@ -74,7 +74,7 @@ class InfoCardNFTView: UIView, UITextViewDelegate {
             info.text = "@\(infoNFT)"
         case .linkOpenSea:
             
-            infoTextView.hyperLink(originalText: "Mais sobre", hyperLink: "Mais sobre", urlString: infoNFT)
+            infoTextView.hyperLink(originalText: "See more", hyperLink: "See more", urlString: infoNFT)
         }
     }
     

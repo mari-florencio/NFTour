@@ -16,7 +16,7 @@ enum ARState {
 
 class ARViewController: UIViewController {
     
-    var imageUrl: String = ""
+    var nftId: String = ""
     var arView = ARView()
     let arServices = ARServices()
     public var state: ARState = .notPlaced
@@ -59,8 +59,8 @@ class ARViewController: UIViewController {
         return label
     }()
   
-    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Voltar", textColor: UIColor.white)
-    
+    private lazy var backButton: BackButton = .makeBackButton(placeholder: "Back", textColor: UIColor.white)
+    private lazy var nft: OpenSeaNFTDetail = DefaultOpenSeaRepository.shared.nftDetailCache.get(withKey: nftId)!
     
     override func loadView() {
         view = arView
@@ -123,7 +123,7 @@ class ARViewController: UIViewController {
             positionLabel.removeFromSuperview()
             state = .placed
             var imageView = UIImageView()
-            let url = URL(string: imageUrl)
+            let url = URL(string: nft.imageUrl)
             imageView.kf.setImage(with: url)
             
             coordinates = arServices.placeAsset(arView: arView.arSceneView, asset: imageView.image!)
@@ -146,7 +146,8 @@ class ARViewController: UIViewController {
     
     func saveLocation() {
         //print("aqui: \(coordinates)")
-        LocalDataService().saveNFTLocation(id: idNFT, latitude: coordinates[0], longitude: coordinates[1])
+        LocalDataService().saveNFTLocation(id: nft.tokenId, latitude: coordinates[0], longitude: coordinates[1])
+        print("coordinates: \(coordinates)")
         displayConfirmation()
     }
 }
